@@ -1,0 +1,2 @@
+export calculateResponsiveState from './calculateResponsiveState'
+

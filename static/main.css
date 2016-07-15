@@ -1,0 +1,24 @@
+
+a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+body {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0px !important;
+  border: 0px !important;
+}
+

@@ -1,0 +1,60 @@
+{
+  "name": "rrm",
+  "version": "1.0.0",
+  "description": "Starter kit for react-redux application using material  ui",
+  "main": "server.js",
+  "dependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "body-parser": "^1.15.2",
+    "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.13.1",
+    "material-ui": "^0.15.2",
+    "node-uuid": "^1.4.7",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-grid-layout": "^0.12.7",
+    "react-intl": "^2.1.3",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.5.2",
+    "react-router-redux": "^4.0.5",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "redux-logger": "^2.6.1",
+    "redux-persist": "^3.2.2",
+    "redux-responsive": "^2.2.0",
+    "redux-thunk": "^2.1.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "react-tap-event-plugin": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "babel-node server.js",
+    "start": "NODE_ENV=production babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarikHuber/react-redux-material-starter-kit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TarikHuber/react-redux-material-starter-kit/issues"
+  },
+  "homepage": "https://github.com/TarikHuber/react-redux-material-starter-kit#readme"
+}
