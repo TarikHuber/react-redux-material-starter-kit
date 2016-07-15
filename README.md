@@ -9,7 +9,7 @@ Clone the project
 ```
 git clone https://github.com/TarikHuber/react-redux-material-starter-kit
 
-//or ina specific folder 
+//or in a specific folder 
 git clone https://github.com/TarikHuber/react-redux-material-starter-kit my_folder
 ```
 
@@ -62,7 +62,7 @@ Starting with react and redux is not a easy task. I was search for the best tool
 
 ### Sources used
 
-#[cloudmu/react-redux-starter-kit](https://github.com/cloudmu/react-redux-starter-kit)
-#[davezuko/react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
-#[Material-UI](http://www.material-ui.com/#/)
-#[STRML/react-grid-layout](https://github.com/STRML/react-grid-layout)
+[cloudmu/react-redux-starter-kit](https://github.com/cloudmu/react-redux-starter-kit)
+[davezuko/react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
+[Material-UI](http://www.material-ui.com/#/)
+[STRML/react-grid-layout](https://github.com/STRML/react-grid-layout)
