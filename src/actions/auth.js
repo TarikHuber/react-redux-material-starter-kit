@@ -16,7 +16,9 @@ function loginRequest(user) {
 function loginSuccess(payload, redirect) {
   return dispatch => {
     dispatch(setUserData(payload));
-	dispatch(push(redirect));
+	
+	console.log(redirect);
+	dispatch(push(redirect||'/'));
   }
 }
 

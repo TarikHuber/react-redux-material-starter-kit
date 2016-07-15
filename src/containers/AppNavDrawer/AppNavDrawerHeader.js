@@ -101,8 +101,8 @@ class AppNavDrawerHeader extends Component {
 
 				</IconMenu>
 
-				<p>{auth.user.name}</p>
-				<div>{auth.user.email}</div>
+				<p>{auth.user?auth.user.name:''}</p>
+				<div>{auth.user?auth.user.email:''}</div>
 				</div>;
 	}
 	

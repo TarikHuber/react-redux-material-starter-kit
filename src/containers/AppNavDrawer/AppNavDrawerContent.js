@@ -55,6 +55,7 @@ class AppNavDrawerContent extends Component {
     const { auth, setAppBarTitle, setSelectedIndex, to, setDrawerOpen,drawerProps, toggleDrawerOpen, browser } = this.props;
 
 	let docked=(browser.greaterThan.medium)?true:false;	
+	const index=this.props.location?this.props.location.pathname:'/';
 	
 	function findMessage(path){
 		return messages.path===path;
@@ -87,7 +88,7 @@ class AppNavDrawerContent extends Component {
 		restricted=<div>
 			<Divider />
 			<Subheader>Restricted Examples</Subheader>	
-			  <SelectableList value={this.props.location.pathname} onChange={(event, itemValue)=>handleClick(itemValue)}>
+			  <SelectableList value={index} onChange={(event, itemValue)=>handleClick(itemValue)}>
 			  <ListItem 
 				primaryText={<FormattedMessage {...messages['/responsive']}/>}
 				leftIcon={<Folder />}
@@ -102,7 +103,7 @@ class AppNavDrawerContent extends Component {
 			  />
 			  </SelectableList>
 
-			  <SelectableList value={this.props.location.pathname} onChange={(event, itemValue)=>handleClick(itemValue)}>
+			  <SelectableList value={index} onChange={(event, itemValue)=>handleClick(itemValue)}>
 			  <ListItem 
 				primaryText='REST API'
 				leftIcon={<Folder />}
@@ -130,7 +131,7 @@ class AppNavDrawerContent extends Component {
     return (	
 			<div>
 
-				<SelectableList value={this.props.location.pathname} onChange={(event, itemValue)=>handleClick(itemValue)}>
+				<SelectableList value={index} onChange={(event, itemValue)=>handleClick(itemValue)}>
 								
 					<ListItem value={'/dashboard'} primaryText={<FormattedMessage {...messages['/dashboard']}/>} leftIcon={<ActionDashboard />} />
 						<Divider />

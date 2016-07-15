@@ -81,6 +81,8 @@ class SignIn extends Component {
 		let user=refs[fields.userName].input.value;
 		let password=refs[fields.password].input.value;
 
+		
+		
 		login(user, password, location.query.redirect);
 		
 	};
