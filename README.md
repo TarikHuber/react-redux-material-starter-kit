@@ -1,6 +1,8 @@
 # react-redux-material-starter-kit
 Starter kit for react-redux application using material  ui
 
+![alt text](https://raw.githubusercontent.com/TarikHuber/react-redux-material-starter-kit/master/demo.png "Demo")
+
 ### Installation
 
 
@@ -55,10 +57,10 @@ Starting with react and redux is not a easy task. I was search for the best tool
 
 ### TO DO
 
-- Clean up code from old tries
+- Refactor code to use best practices 
 - Add testing
 - Implement the internationalisation in the whole project
-- Remove the warnings caused by the new versions of the node_modules
+
 
 ### Sources used
 

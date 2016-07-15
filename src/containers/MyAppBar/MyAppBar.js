@@ -38,7 +38,6 @@ class MyAppBar extends Component {
 				<AppBar 
 					title={title||''} 
 					onLeftIconButtonTouchTap={()=>toggleDrawerOpen()}
-					isInitiallyOpen={true}
 					zDepth={1}
 					iconElementRight={rightMenu}
 					style={styles.appBar}

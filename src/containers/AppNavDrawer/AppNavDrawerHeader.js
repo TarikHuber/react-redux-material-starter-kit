@@ -93,7 +93,7 @@ class AppNavDrawerHeader extends Component {
 				  U
 				</Avatar>
 				
-				<IconMenu style={{float:'right',marginTop:'80'}}
+				<IconMenu style={{float:'right',marginTop:'80px'}}
 				  iconButtonElement={<IconButton><HardwareKeyboardArrowDown color={'white'}/></IconButton>
 				  }
 				>

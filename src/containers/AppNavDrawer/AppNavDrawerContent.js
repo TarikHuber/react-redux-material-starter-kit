@@ -96,8 +96,7 @@ class AppNavDrawerContent extends Component {
 				nestedItems={[
 					<ListItem value={'/responsive'} 
 						primaryText={<FormattedMessage {...messages['/responsive']}/>} 
-						rightIcon={<ActionInfo 
-						onTouchTab={()=>handleClick()}/>} />
+						rightIcon={<ActionInfo/>} />
 				  
 				]}
 			  />
@@ -112,12 +111,12 @@ class AppNavDrawerContent extends Component {
 					<ListItem value={'/gitusers'} 
 						primaryText='Git Users' 
 						rightIcon={<ActionInfo/>}
-						onTouchTab={()=>handleClick()}						
+											
 					/>,
 					<ListItem value={'/repos'} 
 						primaryText='Repos' 
 						rightIcon={<ActionInfo/>}
-						onTouchTab={()=>handleClick()}						
+												
 					/>
 				  
 				]}
