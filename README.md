@@ -1,11 +1,34 @@
 # react-redux-material-starter-kit
-Starter kit for react-redux application using material  ui.
 
-Try the demo application [here](https://www.smartscan.systems/app/).
+This starter kit is designet to give a high start up base for react projects. It uses Redux as the state container. It provides the most common features that you need for the run on a new application, like: navigation and routing, internationalisation, theme design and configuration, responsive design etc... The style is 100% focused on [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html). 
+
+The primary goal of the project is to be a showcase of how things can be solwed and not how they should or must be solwed. Marking Issues, commenting the structure or whole concept and making contributions are very welcome :)
+
+## Table of Contents
+1. [Demo](#demo)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+
+## Demo
+
+Try out the demo application [here](https://www.smartscan.systems/app/).
 
 ![alt text](https://raw.githubusercontent.com/TarikHuber/react-redux-material-starter-kit/master/demo.png "Demo")
 
-### Installation
+## Features
+* [react](https://github.com/facebook/react)
+* [redux](https://github.com/rackt/redux)
+* [react-router](https://github.com/rackt/react-router)
+* [redux-persist](https://github.com/rt2zz/redux-persist)
+* [material-ui](https://github.com/callemall/material-ui)
+* [react-grid-layout](https://github.com/STRML/react-grid-layout)
+* [react-intl](https://github.com/yahoo/react-intl)
+* [webpack](https://github.com/webpack/webpack)
+* [babel](https://github.com/babel/babel)
+
+
+## Getting Started
+
 
 
 Clone the project 
