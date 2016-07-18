@@ -30,7 +30,6 @@ export default class Root extends Component {
 			<ConnectedIntlProvider>
 				<div>		 
 					<Router history={browserHistory} routes={routes} />
-					<DevTools visibleOnLoad={false}/>	
 				</div>
 			</ConnectedIntlProvider>
 		</Provider>	  
