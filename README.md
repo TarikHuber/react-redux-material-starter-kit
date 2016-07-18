@@ -16,6 +16,7 @@ The primary goal of the project is to be a showcase of how things can be solwed 
 1. [Credits](#credits)
 1. [TODO](#todo)
 1. [Sources used](#sources-used)
+1. [Credits](#credits)
 1. [Thank You](#thank-you)
 
 ## Demo
@@ -157,7 +158,7 @@ npm start &
 
 Starting with react and redux is not a easy task. I was searching for the best tools and practices for developing a application that has features like material ui, responsive design, sliding menu etc... There are lots of greate starter kits on the web. Some of the examples in this project are direct copies or modified examples from those starter kids. So I would like to thank all of those making greate starter kids. Having that in mind I'm sharing my starter kid witch I will use in future for creating new projects and I hope that it can help other to master react and redux.
 
-## Thank You
+### Thank You
 
 I would like to thank:
 * [Dan Abramov](https://github.com/gaearon) for Redux :)
