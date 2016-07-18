@@ -18,7 +18,7 @@ function loginSuccess(payload, redirect) {
     dispatch(setUserData(payload));
 	
 	console.log(redirect);
-	dispatch(push(redirect||'/'));
+	dispatch(push(redirect||'dashboard'));
   }
 }
 
