@@ -12,6 +12,10 @@ import {  push } from 'react-router-redux'
 import MiddleContainer from '../../containers/MiddleContainer/MiddleContainer';
 import Activity from '../../containers/Activity/Activity';
 
+
+let location;
+let to;
+
 const fields ={
 	userName:'userName',
 	password: 'password',
@@ -39,6 +43,14 @@ const styles={
 	  },
 }
 
+export function handleRehidration(){
+	
+
+	if(location!==undefined && location.query.redirect!==undefined){
+		to(location.query.redirect);
+	}
+	
+}
 
 class SignIn extends Component {
 	
@@ -47,6 +59,13 @@ class SignIn extends Component {
 	};
 	  
 
+	  
+  componentWillMount(){
+	  
+	  location=this.props.location;
+	  to=this.props.to;
+  }
+	  
   
   render(){
 	const {intl , login ,signIn, setSignInDialogOpen, setSignInTextErrors, to, location } = this.props;

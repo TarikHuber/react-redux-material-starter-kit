@@ -11,6 +11,7 @@ import { browserHistory } from 'react-router';
 import { syncReduxAndTitle } from 'redux-title';
 import config from '../config';
 import DevTools from '../containers/DevTools/DevTools';
+import {handleRehidration} from '../containers/Auth/SignIn'
 
 export default function configureStore() {
   let store;
@@ -47,7 +48,7 @@ export default function configureStore() {
   syncReduxAndTitle(store);
   
   try{
-	 persistStore(store, {whitelist : ['auth']});
+	 persistStore(store, {whitelist : ['auth']}, ()=>{handleRehidration()});
   }catch(e){
 	  
   }
