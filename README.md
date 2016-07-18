@@ -34,6 +34,7 @@ Try out the demo application [here](https://www.smartscan.systems/app/).
 * [react-grid-layout](https://github.com/STRML/react-grid-layout) - used to create a grid list witch items can be moved and resised (dashborad)
 * [react-intl](https://github.com/yahoo/react-intl) - used for the internationalisation
 * [react-responsive](https://github.com/contra/react-responsive) - used to create the responsive design
+* [redux-title](https://github.com/DJCordhose/redux-title) - used to manipulate the page title
 * [webpack](https://github.com/webpack/webpack)
 * [babel](https://github.com/babel/babel)
 
