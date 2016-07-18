@@ -12,6 +12,8 @@ const store = configureStore();
 import  '../static/main.css';
 import  '../node_modules/react-grid-layout/css/styles.css';
 import  '../node_modules/react-resizable/css/styles.css';
+import  '../static/favicon.ico';
+
 
 render(
   <Root store={store} history={history} />,

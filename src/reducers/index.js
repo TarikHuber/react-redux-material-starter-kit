@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { titleReducer } from 'redux-title'
 import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 import counter from './counter';
@@ -18,6 +19,7 @@ import {responsiveStateReducer} from 'redux-responsive';
 
 const reducers = combineReducers({
   todos,
+  title: titleReducer,
   visibilityFilter,
   counter,
   responsiveStateReducer,

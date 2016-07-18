@@ -14,8 +14,12 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+	new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+      extensions: ['', '.js', '.jsx', '.css']
+  },
   module: {
     loaders: [
       {
@@ -24,10 +28,15 @@ module.exports = {
         exclude: /node_modules/,
         include: __dirname
       },
-	  { test: /\.css$/, loader: "style-loader!css-loader" },
+	  { test: /\.css$/, 
+		loader: "style-loader!css-loader" },
+		, 
+      {
+          test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+          loader: 'file-loader?name=[name].[ext]&context=.static/images'  // <-- retain original file name
+      }
+		
     ]
-  },
-  resolve: {
-      extensions: ['', '.js', '.jsx', '.css']
   }
+  
 }

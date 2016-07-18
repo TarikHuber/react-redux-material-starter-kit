@@ -18,7 +18,16 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-
+import  '../../../static/images/grid-list/vegetables-790022_640.jpg';
+import  '../../../static/images/grid-list/burger-827309_640.jpg';
+import  '../../../static/images/grid-list/camera-813814_640.jpg';
+import  '../../../static/images/grid-list/morning-819362_640.jpg';
+import  '../../../static/images/grid-list/hats-829509_640.jpg';
+import  '../../../static/images/grid-list/honey-823614_640.jpg';
+import  '../../../static/images/grid-list/vegetables-790022_640.jpg';
+import  '../../../static/images/grid-list/water-plant-821293_640.jpg';
+import  '../../../static/images/semesnica.jpg';
+import  '../../../static/images/bih.png';
 
 const style = {
   height: 100,
@@ -84,42 +93,37 @@ class Dashboard extends Component{
 		
 		const tilesData = [
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/00-52-29-429_640.jpg',
+			img: 'static/vegetables-790022_640.jpg',
 			title: 'Breakfast',
 			author: 'jill111',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/burger-827309_640.jpg',
+			img: 'static/burger-827309_640.jpg',
 			title: 'Tasty burger',
 			author: 'pashminu',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/camera-813814_640.jpg',
+			img: 'static/camera-813814_640.jpg',
 			title: 'Camera',
 			author: 'Danson67',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/morning-819362_640.jpg',
+			img: 'static/morning-819362_640.jpg',
 			title: 'Morning',
 			author: 'fancycrave1',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/hats-829509_640.jpg',
+			img: 'static/hats-829509_640.jpg',
 			title: 'Hats',
 			author: 'Hans',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/honey-823614_640.jpg',
+			img: 'static/honey-823614_640.jpg',
 			title: 'Honey',
 			author: 'fancycravel',
 		  },
 		  {
-			img: 'http://www.material-ui.com/images/grid-list/vegetables-790022_640.jpg',
-			title: 'Vegetables',
-			author: 'jill111',
-		  },
-		  {
-			img: 'http://www.material-ui.com/images/grid-list/water-plant-821293_640.jpg',
+			img: 'static/water-plant-821293_640.jpg',
 			title: 'Water plant',
 			author: 'BkrmadtyaKarki',
 		  },
@@ -144,15 +148,15 @@ class Dashboard extends Component{
 			 <Card key={"1"}>
 				<CardHeader
 				  title="URL Avatar"
-				  subtitle="Subtitle"
-				  avatar="http://lorempixel.com/100/100/nature/"
+				  subtitle="Semesnica"
+				  avatar="static/bih.png"
 				/>
 				<CardMedia
 				  overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
 				>
-				  <img src="http://lorempixel.com/600/337/nature/" />
+				  <img src="static/semesnica.jpg" />
 				</CardMedia>
-				<CardTitle title="Card title" subtitle="Card subtitle" />
+				<CardTitle title="Semesnica" subtitle="A beutiful place in Bosnia and Herzegovina" />
 				<CardText>
 				  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.

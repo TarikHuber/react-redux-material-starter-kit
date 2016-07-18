@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import config from '../../config';
 import { FormattedMessage } from 'react-intl';
 import { toggleDrawerOpen, setDrawerOpen ,setSelectedIndex} from '../../actions/appNavDrawer';
 import {Drawer , MenuItem, AppBar, ListItem } from 'material-ui';
 import Paper from 'material-ui/Paper';
 import {  push } from 'react-router-redux'
-
+import {updateTitle} from 'redux-title'
 var ReactGridLayout = require('react-grid-layout');
 
 import {List, Subheader, MakeSelectable} from 'material-ui';
@@ -52,7 +53,7 @@ class AppNavDrawerContent extends Component {
   }
   
   render() {
-    const { auth, setAppBarTitle, setSelectedIndex, to, setDrawerOpen,drawerProps, toggleDrawerOpen, browser, location } = this.props;
+    const {intl, auth, setAppBarTitle, setSelectedIndex, to, setDrawerOpen,drawerProps, toggleDrawerOpen, browser, location,updateTitle } = this.props;
 
 	let docked=(browser.greaterThan.medium)?true:false;	
 	const index=this.props.location?this.props.location.pathname:'/';
@@ -69,7 +70,7 @@ class AppNavDrawerContent extends Component {
 		}
 		
 		to(path);
-		
+		updateTitle(config.app.name+' - '+(intl.messages[path]||path));
 	}
 	
 	let drawerP = {...drawerProps,
@@ -172,12 +173,14 @@ class AppNavDrawerContent extends Component {
 }
 
 AppNavDrawerContent.propTypes = {
+  intl: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   drawerProps: PropTypes.object.isRequired,
   toggleDrawerOpen: PropTypes.func.isRequired,
   setDrawerOpen: PropTypes.func.isRequired,
   setSelectedIndex: PropTypes.func.isRequired,
   setAppBarTitle: PropTypes.func.isRequired,
+  updateTitle: PropTypes.func.isRequired,
   browser: PropTypes.object.isRequired,
   to: PropTypes.func.isRequired,
   location: PropTypes.object.isRequired,
@@ -188,11 +191,12 @@ AppNavDrawerContent.contextTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const { auth, appNavDrawer, responsiveStateReducer } = state;
+  const { intl, auth, appNavDrawer, responsiveStateReducer } = state;
   return {
 	drawerProps: appNavDrawer,
 	browser: responsiveStateReducer,
 	auth: auth,
+	intl: intl,
   };
 };
 
@@ -212,6 +216,9 @@ const mapDispatchToProps = (dispatch) => {
 	},
 	setAppBarTitle:(title)=>{
 		dispatch(setAppBarTitle(title));
+	},
+	updateTitle:(title)=>{
+		dispatch(updateTitle(title));
 	}
 
 

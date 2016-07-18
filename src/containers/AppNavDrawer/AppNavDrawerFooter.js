@@ -1,21 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import {Paper, List,Subheader} from 'material-ui';
+import React, { Component } from 'react';
+import { List, Subheader} from 'material-ui';
 import Divider from 'material-ui/Divider';
-
-const primaryColor='#00387b';
+import config from '../../config';
 
 const styles={
-	  paper:{
-		  position: 'absolute',
-		  zIndex: '2',
-		  bottom: '0',
-		  height: '50px',
-	  },
 	  content:{
 		  marginLeft:'6px',
-	  }
-	  
+	  } 
 };
 
 	
@@ -28,25 +19,18 @@ class AppNavDrawerFooter extends Component {
 
     return (	
 
-		
 			<List >
 				<Divider/>
 				<Subheader>Copyright</Subheader>
 					<p style={styles.content}>
-						<span>My Company &copy;</span>
+						<span>&copy; {new Date().getFullYear()} {config.app.company} </span>
 					</p>
 			
 			</List>
 			
-
-
-
-
     );
 
   }
 }
-
-
 
 export default (AppNavDrawerFooter);

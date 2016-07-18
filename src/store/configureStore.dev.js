@@ -9,10 +9,17 @@ import {responsiveStoreEnhancer} from 'redux-responsive';
 import en from '../translations/en';
 import { browserHistory } from 'react-router'
 import DevTools from '../containers/DevTools/DevTools';
+import { syncReduxAndTitle } from 'redux-title';
+import config from '../config';
 
 export default function configureStore() {
   let store;
   
+  
+  const initState={
+	  title:config.app.name,
+	  
+  };
   
   const middlewares=[	
 		thunk, 
@@ -21,7 +28,7 @@ export default function configureStore() {
 	];
 
   if(module.hot){
-    store = createStore(reducers, undefined, compose(
+    store = createStore(reducers, initState, compose(
 		  applyMiddleware(...middlewares),
 		  autoRehydrate(),
 		  responsiveStoreEnhancer,
@@ -29,7 +36,7 @@ export default function configureStore() {
 		  window.devToolsExtension ? window.devToolsExtension() : f => f
     ));
   }else{
-    store = createStore(reducers, undefined, compose(
+    store = createStore(reducers, initState, compose(
 		applyMiddleware(...middlewares),
 		autoRehydrate(),
 		responsiveStoreEnhancer ,
@@ -38,7 +45,7 @@ export default function configureStore() {
   }
 
 
-  
+  syncReduxAndTitle(store);
   
   try{
 	 persistStore(store, {whitelist : ['auth']});
