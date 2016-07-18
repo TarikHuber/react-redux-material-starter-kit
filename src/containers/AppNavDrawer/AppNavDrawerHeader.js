@@ -58,12 +58,12 @@ class AppNavDrawerHeader extends Component {
 	};
 	
 	function handleSignIn(){
-		to('/signin');	
+		to('signin');	
 	}
 	
 	function handleSignOut(){
 		logout();
-		to('/signin');	
+		to('signin');	
 	}
 	
 	let headerContent=<div></div>;
