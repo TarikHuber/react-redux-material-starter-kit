@@ -3,7 +3,7 @@ import 'babel-polyfill';
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute ,IndexRedirect, Redirect} from 'react-router';
 
 import NotFound from './containers/Misc/NotFound';
 import RestrictPage from './containers/Misc/RestrictPage';
@@ -23,19 +23,21 @@ import Todo from './containers/Todo/Todo'
 
 export default (
     <Route path="/" component={App}>
-          <IndexRoute component={Dashboard}/>
-		  <Route path="/signin" component={SignIn}/>
-		  <Route path="/dashboard" component={Dashboard}/>
-		  <Route path="/bar" component={Bar}/>
-		  <Route path="/foo" component={Foo}/>
-		  <Route path="/todo" component={Todo}/>
-		  <Route path="/counter" component={Counter}/>
+          <IndexRedirect to="dashboard" />
+		  <Route path="app" component={Dashboard}/>
+		  <Redirect from="app" to="dashboard" />
+		  <Route path="signin" component={SignIn}/>
+		  <Route path="dashboard" component={Dashboard}/>
+		  <Route path="bar" component={Bar}/>
+		  <Route path="foo" component={Foo}/>
+		  <Route path="todo" component={Todo}/>
+		  <Route path="counter" component={Counter}/>
 		  <Route component={RestrictPage}>
-            <Route path="/responsive" component={Responsive} />
-			<Route path="/gitusers" component={GitUsers} />
-			<Route path="/repos" component={Repos} />
+            <Route path="responsive" component={Responsive} />
+			<Route path="gitusers" component={GitUsers} />
+			<Route path="repos" component={Repos} />
           </Route>
-		  <Route path="/settings" component={MainSettings}/>
+		  <Route path="settings" component={MainSettings}/>
           <Route path="*" component={NotFound}/>
 	</Route>
   

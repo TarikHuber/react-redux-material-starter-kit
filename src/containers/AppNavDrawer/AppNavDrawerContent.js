@@ -52,7 +52,7 @@ class AppNavDrawerContent extends Component {
   }
   
   render() {
-    const { auth, setAppBarTitle, setSelectedIndex, to, setDrawerOpen,drawerProps, toggleDrawerOpen, browser } = this.props;
+    const { auth, setAppBarTitle, setSelectedIndex, to, setDrawerOpen,drawerProps, toggleDrawerOpen, browser, location } = this.props;
 
 	let docked=(browser.greaterThan.medium)?true:false;	
 	const index=this.props.location?this.props.location.pathname:'/';
@@ -90,12 +90,12 @@ class AppNavDrawerContent extends Component {
 			<Subheader>Restricted Examples</Subheader>	
 			  <SelectableList value={index} onChange={(event, itemValue)=>handleClick(itemValue)}>
 			  <ListItem 
-				primaryText={<FormattedMessage {...messages['/responsive']}/>}
+				primaryText={<FormattedMessage {...messages['responsive']}/>}
 				leftIcon={<Folder />}
 				primaryTogglesNestedList={true}
 				nestedItems={[
-					<ListItem value={'/responsive'} 
-						primaryText={<FormattedMessage {...messages['/responsive']}/>} 
+					<ListItem value={'responsive'} 
+						primaryText={<FormattedMessage {...messages['responsive']}/>} 
 						rightIcon={<ActionInfo/>} />
 				  
 				]}
@@ -108,12 +108,12 @@ class AppNavDrawerContent extends Component {
 				leftIcon={<Folder />}
 				primaryTogglesNestedList={true}
 				nestedItems={[
-					<ListItem value={'/gitusers'} 
+					<ListItem value={'gitusers'} 
 						primaryText='Git Users' 
 						rightIcon={<ActionInfo/>}
 											
 					/>,
-					<ListItem value={'/repos'} 
+					<ListItem value={'repos'} 
 						primaryText='Repos' 
 						rightIcon={<ActionInfo/>}
 												
@@ -132,7 +132,7 @@ class AppNavDrawerContent extends Component {
 
 				<SelectableList value={index} onChange={(event, itemValue)=>handleClick(itemValue)}>
 								
-					<ListItem value={'/dashboard'} primaryText={<FormattedMessage {...messages['/dashboard']}/>} leftIcon={<ActionDashboard />} />
+					<ListItem value={'dashboard'} primaryText={<FormattedMessage {...messages['dashboard']}/>} leftIcon={<ActionDashboard />} />
 						<Divider />
 						<Subheader>Public Examples</Subheader>	
 					<ListItem
@@ -140,8 +140,8 @@ class AppNavDrawerContent extends Component {
 							leftIcon={<Folder />}
 							primaryTogglesNestedList={true}
 							nestedItems={[
-							  <ListItem value={'/foo'}  primaryText={<FormattedMessage {...messages['/foo']}/>} leftIcon={<ActionGrade />} />,
-							  <ListItem value={'/bar'}  primaryText={<FormattedMessage {...messages['/bar']}/>} leftIcon={<ActionGrade />} />,
+							  <ListItem value={'foo'}  primaryText={<FormattedMessage {...messages['foo']}/>} leftIcon={<ActionGrade />} />,
+							  <ListItem value={'bar'}  primaryText={<FormattedMessage {...messages['bar']}/>} leftIcon={<ActionGrade />} />,
 							]}
 						  />
 					<ListItem
@@ -149,8 +149,8 @@ class AppNavDrawerContent extends Component {
 							leftIcon={<Folder />}
 							primaryTogglesNestedList={true}
 							nestedItems={[
-								<ListItem value={'/counter'} primaryText={<FormattedMessage {...messages['/counter']}/>} leftIcon={<ActionGrade />} />,
-								<ListItem value={'/todo'}  primaryText={<FormattedMessage {...messages['/todo']}/>} leftIcon={<ActionGrade />} />
+								<ListItem value={'counter'} primaryText={<FormattedMessage {...messages['counter']}/>} leftIcon={<ActionGrade />} />,
+								<ListItem value={'todo'}  primaryText={<FormattedMessage {...messages['todo']}/>} leftIcon={<ActionGrade />} />
 								
 							]}
 						  />
@@ -159,8 +159,8 @@ class AppNavDrawerContent extends Component {
 							
 								
 						<Divider />
-						<Subheader>{<FormattedMessage {...messages['/settings']}/>}</Subheader>	
-						<ListItem value={'/settings'} primaryText={<FormattedMessage {...messages['/settings']}/>} leftIcon={<ActionSettings />} />
+						<Subheader>{<FormattedMessage {...messages['settings']}/>}</Subheader>	
+						<ListItem value={'settings'} primaryText={<FormattedMessage {...messages['settings']}/>} leftIcon={<ActionSettings />} />
 						
 				</SelectableList>
 				

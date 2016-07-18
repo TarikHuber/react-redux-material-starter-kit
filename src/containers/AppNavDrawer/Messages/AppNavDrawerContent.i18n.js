@@ -1,40 +1,40 @@
 export const messages = {
-	'/bar': {
+	'bar': {
       id: 'bar',
       defaultMessage: 'bar',
 	},
 	
-	'/foo': {
+	'foo': {
       id: 'foo',  
       defaultMessage: 'foo',
 	},
 	
-	'/dashboard': {
+	'dashboard': {
       id: 'dashboard',
       defaultMessage: 'dashboard',
 	},
 	
-	'/counter': {
+	'counter': {
       id: 'counter',
       defaultMessage: 'counter',
 	},
 	
-	'/todo': {
+	'todo': {
       id: 'todo',
       defaultMessage: 'todo',
 	},
 	
-	'/examples': {
+	'examples': {
       id: 'examples',
       defaultMessage: 'examples',
 	},
 	
-	'/settings': {
+	'settings': {
       id: 'settings',
       defaultMessage: 'settings',
 	},
 	
-	'/responsive': {
+	'responsive': {
       id: 'responsive',
       defaultMessage: 'responsive',
 	},
