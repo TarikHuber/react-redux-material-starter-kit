@@ -1,5 +1,7 @@
 # react-redux-material-starter-kit
-Starter kit for react-redux application using material  ui
+Starter kit for react-redux application using material  ui.
+
+Try the demo application [here](https://www.smartscan.systems/app/).
 
 ![alt text](https://raw.githubusercontent.com/TarikHuber/react-redux-material-starter-kit/master/demo.png "Demo")
 
