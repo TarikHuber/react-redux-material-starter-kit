@@ -75,6 +75,7 @@ If that is the case you can the application in `http://localhost:3500`.
 │   ├── themes               # Available and custom themes of the application
 │   ├── translations         # Available languages for the application
 │   ├── utils                # Tools used in application that don't fit in any other structure folder
+│   ├── config.js            # Application config data like application name
 │   ├── index.js             # Application entry point
 │   └── routes.js            # Application routes definition
 └── static                   # Static assets
