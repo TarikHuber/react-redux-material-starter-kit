@@ -55,7 +55,7 @@
   },
   "keywords": ["react", "redux", "material-ui", "responsive"],
   "author": "Tarik Huber",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TarikHuber/react-redux-material-starter-kit/issues"
   },
