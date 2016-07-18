@@ -53,8 +53,8 @@
     "type": "git",
     "url": "git+https://github.com/TarikHuber/react-redux-material-starter-kit.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "redux", "material-ui", "responsive"],
+  "author": "Tarik Huber",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TarikHuber/react-redux-material-starter-kit/issues"
