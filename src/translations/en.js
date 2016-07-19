@@ -28,4 +28,6 @@ export default {
 	'select_theme': 'Select theme',
 	'select_language': 'Select language',
 	'cancel': 'Cancel',
+	'props': 'Props',
+	'propsanddispatch': 'Params and Dispatch'
 };

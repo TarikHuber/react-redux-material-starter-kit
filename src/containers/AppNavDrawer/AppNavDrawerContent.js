@@ -142,7 +142,8 @@ class AppNavDrawerContent extends Component {
 							primaryTogglesNestedList={true}
 							nestedItems={[
 							  <ListItem value={'foo'}  primaryText={<FormattedMessage {...messages['foo']}/>} leftIcon={<ActionGrade />} />,
-							  <ListItem value={'bar'}  primaryText={<FormattedMessage {...messages['bar']}/>} leftIcon={<ActionGrade />} />,
+							  <ListItem value={'props'}  primaryText={intl.messages.props||'props'} leftIcon={<ActionGrade />} />,
+							  <ListItem value={'propsanddispatch'}  primaryText={intl.messages.propsanddispatch||'propsanddispatch'} leftIcon={<ActionGrade />} />,
 							]}
 						  />
 					<ListItem

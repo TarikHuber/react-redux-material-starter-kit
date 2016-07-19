@@ -28,6 +28,8 @@ const de2={
   'select_theme': 'Thema auswählen',
   'select_language': 'Sprache auswählen',
   'cancel': 'Abbrechen',
+  'props': 'Params',
+  'propsanddispatch': 'Params und Dispatch'
 };
 
 

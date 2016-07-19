@@ -1,24 +1,19 @@
 import 'babel-polyfill';
-
 import React from 'react';
-import {render} from 'react-dom';
-import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute ,IndexRedirect, Redirect} from 'react-router';
-
+import { Route ,IndexRedirect, Redirect} from 'react-router';
 import NotFound from './containers/Misc/NotFound';
 import RestrictPage from './containers/Misc/RestrictPage';
-
 import App from './containers/App/App';
 import SignIn from './containers/Auth/SignIn';
 import Dashboard from './containers/Dashboard/Dashboard';
-import Foo from './containers/Foo/Foo';
-import Bar from './containers/Bar/Bar';
+import Foo from './components/BasicExamples/Foo';
+import PropsExample from './components/BasicExamples/PropsExample';
+import PropsAndDispatchExample from './components/BasicExamples/PropsAndDispatchExample';
 import Counter from './containers/Counter/Counter';
 import Responsive from './containers/Responsive/Responsive';
 import MainSettings from './containers/Settings/MainSettings';
 import GitUsers from './containers/GitUsers/GitUsers';
 import Repos from './containers/Repos/Repos';
-
 import Todo from './containers/Todo/Todo'
 
 export default (
@@ -28,8 +23,9 @@ export default (
 		  <Redirect from="app" to="dashboard" />
 		  <Route path="signin" component={SignIn}/>
 		  <Route path="dashboard" component={Dashboard}/>
-		  <Route path="bar" component={Bar}/>
 		  <Route path="foo" component={Foo}/>
+		  <Route path="props" component={PropsExample}/>
+		  <Route path="propsanddispatch" component={PropsAndDispatchExample}/>
 		  <Route path="todo" component={Todo}/>
 		  <Route path="counter" component={Counter}/>
 		  <Route component={RestrictPage}>
