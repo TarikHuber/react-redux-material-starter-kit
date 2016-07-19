@@ -22,7 +22,7 @@ const reducers = combineReducers({
   title: titleReducer,
   visibilityFilter,
   counter,
-  responsiveStateReducer,
+  browser: responsiveStateReducer,
   intl,
   appNavDrawer,
   appStyle,

@@ -57,9 +57,9 @@ MyAppBar.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  const {responsiveStateReducer, appNavDrawer } = state;
+  const {browser, appNavDrawer } = state;
   return {
-	browser: responsiveStateReducer,
+	browser: browser,
 	appNavDrawer: appNavDrawer,
   };
 };

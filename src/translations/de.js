@@ -29,7 +29,8 @@ const de2={
   'select_language': 'Sprache auswählen',
   'cancel': 'Abbrechen',
   'props': 'Params',
-  'propsanddispatch': 'Params und Dispatch'
+  'propsanddispatch': 'Params und Dispatch',
+  'navigation': 'Navigation',
 };
 
 

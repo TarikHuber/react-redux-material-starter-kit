@@ -29,5 +29,6 @@ export default {
 	'select_language': 'Select language',
 	'cancel': 'Cancel',
 	'props': 'Props',
-	'propsanddispatch': 'Params and Dispatch'
+	'propsanddispatch': 'Params and Dispatch',
+	'navigation': 'Navigation',
 };

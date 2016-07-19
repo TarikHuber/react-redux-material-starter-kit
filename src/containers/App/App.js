@@ -132,9 +132,9 @@ App.contextTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {appStyle, sidebar, responsiveStateReducer, appNavDrawer } = state;
+  const {appStyle, sidebar, browser, appNavDrawer } = state;
   return {
-	browser: responsiveStateReducer,
+	browser: browser,
 	appStyle:appStyle,
 	appNavDrawer: appNavDrawer,
   };

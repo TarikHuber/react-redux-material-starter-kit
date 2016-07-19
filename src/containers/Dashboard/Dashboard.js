@@ -234,14 +234,14 @@ Dashboard.propTypes = {
 
 function mapStateToProps(state) {
 
-	 const {responsiveStateReducer, intl ,dashboard, appNavDrawer, appStyle,} = state;
+	 const {browser, intl ,dashboard, appNavDrawer, appStyle,} = state;
 
 	 return {
 			theme: appStyle.theme,
 			appNavDrawer:appNavDrawer,
 			dashboard: dashboard,
 			intl:intl,
-			browser: responsiveStateReducer,
+			browser: browser,
 		 };
 
 }

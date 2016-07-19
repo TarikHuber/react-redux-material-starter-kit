@@ -47,11 +47,11 @@ Responsive.propTypes = {
 
 function mapStateToProps(state) {
 
-	 const { responsiveStateReducer} = state;
+	 const { browser} = state;
 
 	 return {
 			
-			browser: responsiveStateReducer,
+			browser: browser,
 		 };
 
 }

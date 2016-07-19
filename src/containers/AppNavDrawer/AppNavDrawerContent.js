@@ -192,10 +192,10 @@ AppNavDrawerContent.contextTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const { intl, auth, appNavDrawer, responsiveStateReducer } = state;
+  const { intl, auth, appNavDrawer, browser } = state;
   return {
 	drawerProps: appNavDrawer,
-	browser: responsiveStateReducer,
+	browser: browser,
 	auth: auth,
 	intl: intl,
   };

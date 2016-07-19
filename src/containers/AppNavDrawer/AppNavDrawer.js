@@ -69,10 +69,10 @@ AppNavDrawer.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  const {  appNavDrawer, responsiveStateReducer } = state;
+  const {  appNavDrawer, browser } = state;
   return {
 	drawerProps: appNavDrawer,
-	browser: responsiveStateReducer,
+	browser: browser,
   };
 };
 
