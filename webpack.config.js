@@ -13,7 +13,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static'
   },
-  devtool: '#source-map',
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),

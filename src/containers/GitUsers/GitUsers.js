@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import GitUser from '../../components/GitUser/GitUser';
-import MiddleContainer from '../../containers/MiddleContainer/MiddleContainer';
+import MiddleContainer from '../../components/MiddleContainer/MiddleContainer';
 import Activity from '../../components/Activity/Activity';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';

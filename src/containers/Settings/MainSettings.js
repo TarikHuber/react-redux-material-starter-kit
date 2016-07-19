@@ -18,7 +18,7 @@ import themes from '../../themes/themes';
 import ThemeDialog from '../../containers/ThemeDialog/ThemeDialog';
 import IntlDialog from '../../containers/IntlDialog/IntlDialog';
 import Toggle from 'material-ui/Toggle';
-                  
+                    
 class MainSettings extends Component{
 	  
 	constructor(props) {
@@ -33,7 +33,7 @@ class MainSettings extends Component{
 
 		return (  
 
-			<Activity title={intl.messages.settings} nav_index='/settings' >
+			<Activity title={intl.messages.settings} nav_index='settings' >
 				<div>
 					<List>
 						<Subheader>{intl.messages.general}</Subheader>
