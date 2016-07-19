@@ -7,7 +7,7 @@ import DevTools from '../../containers/DevTools/DevTools';
  
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
- 
+  
 import NotFound from '../../containers/Misc/NotFound';
 import RestrictPage from '../../containers/Misc/RestrictPage';
 import App from '../../containers/App/App';
@@ -22,7 +22,7 @@ import MainSettings from '../../containers/Settings/MainSettings';
 import GitUsers from '../../containers/GitUsers/GitUsers';
 import Repos from '../../containers/Repos/Repos';
 import Todo from '../../containers/Todo/Todo'
-
+ 
 export default class Root extends Component {
   render() {
     const { store, history } = this.props

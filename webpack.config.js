@@ -4,24 +4,29 @@ var webpack = require('webpack')
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware/client',
+	'babel-polyfill',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true',
     './src/index'
   ],
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static'
   },
+  devtool: '#source-map',
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-	new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+      extensions: ['', '.js', '.jsx', '.css']
+  },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [ 'react-hot','babel' ],
+        loaders: [ 'babel' ],
         exclude: /node_modules/,
         include: __dirname
       }, { 
@@ -30,11 +35,10 @@ module.exports = {
 	  }, { 
 		test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,
 		exclude: /node_modules/,
-        loader: 'file-loader?name=[name].[ext]' 
+        loader: 'file-loader?name=[name].[ext]' ,
+		query: {limit: 10240} 
       }
     ]
-  },
-  resolve: {
-      extensions: ['', '.js', '.jsx', '.css']
   }
+  
 }

@@ -13,7 +13,7 @@ import { syncReduxAndTitle } from 'redux-title';
 import config from '../config';
 import {handleRehidration} from '../containers/Auth/SignIn'
 
-
+ 
 export default function configureStore() {
   let store;
   
@@ -27,6 +27,7 @@ export default function configureStore() {
 		createLogger(),
 		routerMiddleware(browserHistory)
 	];	
+	
 	
   if(module.hot){
     store = createStore(reducers, initState, compose(
@@ -54,7 +55,6 @@ export default function configureStore() {
 	  
   }
   
-  
-  
+
   return store;
 }
