@@ -49,7 +49,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "babel-node server.js",
     "start": "NODE_ENV=production babel-node server.js",
-	"compile": "babel --presets es2015,react -d lib/ src/"
+	"compile": "babel --presets es2015,react -d src/"
   },
   "repository": {
     "type": "git",
