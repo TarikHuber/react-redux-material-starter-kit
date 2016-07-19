@@ -33,7 +33,7 @@ class AppNavDrawer extends Component {
   render() {
     const { setSelectedIndex, drawerProps, toggleDrawerOpen, browser } = this.props;
 
-	let docked=browser.greaterThan.medium;	
+	let docked=browser.greaterThan.medium&&drawerProps.responsive;	
 	
 	function handleDrawerToggle(){
 		toggleDrawerOpen();

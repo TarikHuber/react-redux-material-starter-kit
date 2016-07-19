@@ -87,10 +87,9 @@ class App extends Component {
   
 	
   render() {
-    const {appStyle, toggleDrawerOpen, browser, appBar } = this.props;
+    const {appStyle, toggleDrawerOpen, browser, appBar, appNavDrawer } = this.props;
 
-
-	let docked=(browser.greaterThan.medium)?true:false;	
+	let docked=browser.greaterThan.medium&&appNavDrawer.responsive;	
 
     let contentStyle=docked?styles.content_docked:styles.content_undocked;
 	let appBarStyle=docked?styles.appBar_docked:styles.appBar_undocked;
@@ -122,6 +121,7 @@ App.propTypes = {
   browser: PropTypes.object.isRequired,
   appStyle: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
+  appNavDrawer: PropTypes.object.isRequired,
 };
 
 
@@ -132,10 +132,11 @@ App.contextTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {appStyle, sidebar, responsiveStateReducer } = state;
+  const {appStyle, sidebar, responsiveStateReducer, appNavDrawer } = state;
   return {
 	browser: responsiveStateReducer,
 	appStyle:appStyle,
+	appNavDrawer: appNavDrawer,
   };
 };
 

@@ -8,8 +8,9 @@ import Subheader from 'material-ui/Subheader';
 import Checkbox from 'material-ui/Checkbox';
 import Style  from 'material-ui/svg-icons/image/style';
 import ActionLanguage  from 'material-ui/svg-icons/action/language';
+import ActionChromeReaderMode  from 'material-ui/svg-icons/action/chrome-reader-mode';
 import Activity from '../../components/Activity/Activity';
-import { setSelectedIndex} from '../../actions/appNavDrawer';
+import { setSelectedIndex, setResponsive} from '../../actions/appNavDrawer';
 import {setThemeDialogOpen} from '../../actions/appStyle';
 import {setIntlDialogOpen} from '../../actions/intl';
 import languages from '../../translations/languages';
@@ -26,7 +27,7 @@ class MainSettings extends Component{
 
 	render(){
  
-		const { intl , appStyle, setThemeDialogOpen, setIntlDialogOpen} = this.props;
+		const { intl , appStyle, setThemeDialogOpen, setIntlDialogOpen, setResponsive,appNavDrawer} = this.props;
 		const currentLanguage = find(languages, { key: intl.locale });
 
 
@@ -54,12 +55,16 @@ class MainSettings extends Component{
 					</List> 
 					<Divider />
 					<List>
-						<Subheader>Navigation</Subheader>
+						<Subheader>{intl.messages.navigation||'navigation'}</Subheader>
 						<ListItem
-							leftIcon={<ActionLanguage />}
+							leftIcon={<ActionChromeReaderMode />}
 							primaryTogglesNestedList={true}
-							primaryText="Responsive" 
-							rightToggle={<Toggle />} />
+							primaryText={intl.messages.responsive||'responsive'} 
+							rightToggle={<Toggle 
+											toggled={appNavDrawer.responsive} 
+											onToggle={()=>{setResponsive(!appNavDrawer.responsive)}}
+										/>} 
+						/>
 					</List>
 					<Divider />
 				</div>
@@ -77,16 +82,19 @@ MainSettings.propTypes = {
 	setSelectedIndex: PropTypes.func.isRequired,
 	setThemeDialogOpen: PropTypes.func.isRequired,
 	setIntlDialogOpen: PropTypes.func.isRequired,
+	setResponsive: PropTypes.func.isRequired,
+	appNavDrawer: PropTypes.object.isRequired,
 }
 
 
 function mapStateToProps(state) {
 
-	 const {intl, appStyle} = state;
+	 const {intl, appStyle, appNavDrawer} = state;
 
 	 return {
 			intl:intl,
 			appStyle:appStyle,
+			appNavDrawer:appNavDrawer,
 		 };
 
 }
@@ -106,6 +114,9 @@ const mapDispatchToProps = (dispatch) => {
 	},
 	setIntlDialogOpen:(open) => {
 		dispatch(setIntlDialogOpen(open));	
+	},
+	setResponsive:(responsive) =>{
+		dispatch(setResponsive(responsive));
 	}
   }
 }

@@ -26,9 +26,9 @@ class MyAppBar extends Component {
 
 
 	render() {
-		const {title, menu, toggleDrawerOpen, browser } = this.props;
+		const {title, menu, toggleDrawerOpen, browser , appNavDrawer} = this.props;
 
-		let docked=(browser.greaterThan.medium)?true:false;	
+		let docked=browser.greaterThan.medium && appNavDrawer.responsive;	
 		let appBarMenuStyle=docked?styles.appBarMenu_docked:styles.appBarMenu_undocked; 
 		let rightMenu=<div style={appBarMenuStyle}>{menu}</div>;
 
@@ -52,14 +52,15 @@ MyAppBar.propTypes = {
 	browser: PropTypes.object.isRequired,
 	title: PropTypes.string,
 	menu: PropTypes.object,
+	appNavDrawer: PropTypes.object.isRequired,
 };
 
 
 const mapStateToProps = (state) => {
-  const {responsiveStateReducer } = state;
+  const {responsiveStateReducer, appNavDrawer } = state;
   return {
 	browser: responsiveStateReducer,
-
+	appNavDrawer: appNavDrawer,
   };
 };
 
