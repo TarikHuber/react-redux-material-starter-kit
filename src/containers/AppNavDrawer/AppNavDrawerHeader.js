@@ -8,7 +8,7 @@ import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionLock from 'material-ui/svg-icons/action/lock';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import { toggleDrawerOpen } from '../../actions/appNavDrawer';
 import HardwareKeyboardArrowDown from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 
 import IconMenu from 'material-ui/IconMenu';
@@ -45,7 +45,7 @@ class AppNavDrawerHeader extends Component {
 
   render() {
 	  
-	 const {to ,logout, auth , appStyle, setSignInDialogOpen } = this.props;
+	 const {to ,logout, auth , appStyle, setSignInDialogOpen, toggleDrawerOpen } = this.props;
 	    
 	 const style={
 
@@ -59,6 +59,7 @@ class AppNavDrawerHeader extends Component {
 	
 	function handleSignIn(){
 		to('signin');	
+		toggleDrawerOpen();
 	}
 	
 	function handleSignOut(){
@@ -124,6 +125,7 @@ AppNavDrawerHeader.propTypes = {
   setSignInDialogOpen: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired,
   to: PropTypes.func.isRequired,
+  toggleDrawerOpen: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
@@ -145,6 +147,9 @@ const mapDispatchToProps = (dispatch) => {
 	},
 	to: (path)=>{
 		dispatch(push(path))
+	},
+	toggleDrawerOpen: () => {
+		dispatch(toggleDrawerOpen())
 	},
 
   }

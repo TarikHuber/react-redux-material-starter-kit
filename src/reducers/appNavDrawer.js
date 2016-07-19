@@ -1,17 +1,17 @@
 import{SET_DRAWER_OPEN,
 	TOGGLE_DRAWER_OPEN,
 	TOGGLE_DRAWER_DOCK,
-	SET_SELECTED_INDEX} from '../actions/appNavDrawer';
+	SET_RESPONSIVE} from '../actions/appNavDrawer';
 
 
 const initialState = {
   disableSwipeToOpen: false,
   docked: true,
+  responsive: true,
   open: false,
   openSecondary: false,
   zDepth: 2,
   swipeAreaWidth: 30,
-  selectedIndex: '/',
 }
 
 const appNavDrawer = (state = initialState, action) => {
@@ -33,10 +33,11 @@ const appNavDrawer = (state = initialState, action) => {
 			open: action.open
 		  };
 		  
-	case SET_SELECTED_INDEX:
+		  
+	case SET_RESPONSIVE:
 		return {
 			...state,
-			selectedIndex: action.index
+			responsive: action.responsive
 		  };
 		  
     default:

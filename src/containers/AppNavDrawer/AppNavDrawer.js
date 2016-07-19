@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { toggleDrawerOpen , setSelectedIndex} from '../../actions/appNavDrawer';
 import {Drawer , MenuItem, AppBar, ListItem } from 'material-ui';
-import AppNavDrawerFooter from './AppNavDrawerFooter';
+import AppNavDrawerFooter from '../../components/AppNavDrawer/AppNavDrawerFooter';
 import AppNavDrawerHeader from './AppNavDrawerHeader';
 import AppNavDrawerContent from './AppNavDrawerContent';
-
+  
 const styles={
 
 	  header:{
@@ -33,7 +33,7 @@ class AppNavDrawer extends Component {
   render() {
     const { setSelectedIndex, drawerProps, toggleDrawerOpen, browser } = this.props;
 
-	let docked=(browser.greaterThan.medium)?true:false;	
+	let docked=browser.greaterThan.medium;	
 	
 	function handleDrawerToggle(){
 		toggleDrawerOpen();

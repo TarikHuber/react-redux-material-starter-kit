@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import GitUser from '../../components/GitUser/GitUser';
 import MiddleContainer from '../../containers/MiddleContainer/MiddleContainer';
-import Activity from '../../containers/Activity/Activity';
+import Activity from '../../components/Activity/Activity';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { invalidateUsersPage,

@@ -10,7 +10,7 @@ import { messages } from './SignIn.i18n';
 import ActionLockOpen  from 'material-ui/svg-icons/action/lock-open';
 import {  push } from 'react-router-redux'
 import MiddleContainer from '../../containers/MiddleContainer/MiddleContainer';
-import Activity from '../../containers/Activity/Activity';
+import Activity from '../../components/Activity/Activity';
 
 
 let location;

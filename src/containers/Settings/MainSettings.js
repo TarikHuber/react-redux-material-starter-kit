@@ -8,7 +8,7 @@ import Subheader from 'material-ui/Subheader';
 import Checkbox from 'material-ui/Checkbox';
 import Style  from 'material-ui/svg-icons/image/style';
 import ActionLanguage  from 'material-ui/svg-icons/action/language';
-import Activity from '../../containers/Activity/Activity';
+import Activity from '../../components/Activity/Activity';
 import { setSelectedIndex} from '../../actions/appNavDrawer';
 import {setThemeDialogOpen} from '../../actions/appStyle';
 import {setIntlDialogOpen} from '../../actions/intl';
@@ -16,6 +16,7 @@ import languages from '../../translations/languages';
 import themes from '../../themes/themes';
 import ThemeDialog from '../../containers/ThemeDialog/ThemeDialog';
 import IntlDialog from '../../containers/IntlDialog/IntlDialog';
+import Toggle from 'material-ui/Toggle';
 
 class MainSettings extends Component{
 	
@@ -24,35 +25,44 @@ class MainSettings extends Component{
 	};
 
 	render(){
-		
+ 
 		const { intl , appStyle, setThemeDialogOpen, setIntlDialogOpen} = this.props;
 		const currentLanguage = find(languages, { key: intl.locale });
-		
-		
-		return (  
-	  
-			<Activity title={intl.messages.settings} nav_index='/settings' >
-			<div>
-		      <List>
-				<Subheader>{intl.messages.general}</Subheader>
-				<ListItem
-					leftIcon={<Style />}
-					primaryText={intl.messages.theme}
-					secondaryText={intl.messages[appStyle.theme.id]}
-					onClick={()=>{setThemeDialogOpen(true)}}
-				/>
-				<ThemeDialog/>
-					<Divider inset={true} />
-				<ListItem
-					leftIcon={<ActionLanguage />}
-					primaryText={intl.messages.language}
-					secondaryText={intl.messages[currentLanguage.id]}
-					onClick={()=>{setIntlDialogOpen(true)}}
-				/>
-				<IntlDialog/>
-			  </List>
 
-			</div>
+
+		return (  
+
+			<Activity title={intl.messages.settings} nav_index='/settings' >
+				<div>
+					<List>
+						<Subheader>{intl.messages.general}</Subheader>
+						<ListItem
+							leftIcon={<Style />}
+							primaryText={intl.messages.theme}
+							secondaryText={intl.messages[appStyle.theme.id]}
+							onClick={()=>{setThemeDialogOpen(true)}}
+						/>
+						<ThemeDialog/>
+						<Divider inset={true} />
+						<ListItem
+							leftIcon={<ActionLanguage />}
+							primaryText={intl.messages.language}
+							secondaryText={intl.messages[currentLanguage.id]}
+							onClick={()=>{setIntlDialogOpen(true)}}
+						/>
+						<IntlDialog/>
+					</List> 
+					<Divider />
+					<List>
+						<Subheader>Navigation</Subheader>
+						<ListItem
+							leftIcon={<ActionLanguage />}
+							primaryTogglesNestedList={true}
+							primaryText="Responsive" 
+							rightToggle={<Toggle />} />
+					</List>
+					<Divider />
+				</div>
 			</Activity>
 
 		);

@@ -11,7 +11,7 @@ import {Responsive, WidthProvider} from 'react-grid-layout';
 const ResponsiveReactGridLayout = WidthProvider(Responsive);;
 import {setSelectedIndex} from '../../actions/appNavDrawer';
 import {onLayoutChange} from '../../actions/dashboard';
-import Activity from '../../containers/Activity/Activity';
+import Activity from '../../components/Activity/Activity';
 import FontIcon from 'material-ui/FontIcon';
 import FlatButton from 'material-ui/FlatButton';
 import IconMenu from 'material-ui/IconMenu';

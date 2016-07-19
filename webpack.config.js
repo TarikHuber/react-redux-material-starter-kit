@@ -14,11 +14,9 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+	new webpack.NoErrorsPlugin()
   ],
-  resolve: {
-      extensions: ['', '.js', '.jsx', '.css']
-  },
   module: {
     loaders: [
       {
@@ -26,16 +24,17 @@ module.exports = {
         loaders: [ 'babel' ],
         exclude: /node_modules/,
         include: __dirname
-      },
-	  { test: /\.css$/, 
-		loader: "style-loader!css-loader" },
-		, 
-      {
-          test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-          loader: 'file-loader?name=[name].[ext]&context=.static/images'  // <-- retain original file name
+      }, { 
+		test: /\.css$/, 
+		loader: "style-loader!css-loader" 
+	  }, { 
+		test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+		exclude: /node_modules/,
+        loader: 'file-loader?name=[name].[ext]' 
       }
-		
     ]
+  },
+  resolve: {
+      extensions: ['', '.js', '.jsx', '.css']
   }
-  
 }

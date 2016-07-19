@@ -11,7 +11,6 @@ const styles={
         top: 0,
 		height:64,
       },
-
 	  appBarMenu_docked:{
 		  marginRight:'256px',
 	  },

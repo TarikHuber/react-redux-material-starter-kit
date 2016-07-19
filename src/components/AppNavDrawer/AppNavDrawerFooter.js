@@ -8,29 +8,22 @@ const styles={
 		  marginLeft:'6px',
 	  } 
 };
-
 	
 class AppNavDrawerFooter extends Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  render() {
 
-    return (	
+	render() {
 
+		return (	
 			<List >
 				<Divider/>
 				<Subheader>Copyright</Subheader>
-					<p style={styles.content}>
-						<span>&copy; {new Date().getFullYear()} {config.app.company} </span>
-					</p>
-			
+				<p style={styles.content}>
+					<span>&copy; {new Date().getFullYear()} {config.app.company} </span>
+				</p>
 			</List>
-			
-    );
+		);
 
-  }
+	}
 }
 
 export default (AppNavDrawerFooter);

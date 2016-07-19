@@ -20,14 +20,14 @@ export default function configureStore() {
   const initState={
 	  title:config.app.name,
 	  
-  };
+  }; 
   
   const middlewares=[	
 		thunk, 
 		createLogger(),
 		routerMiddleware(browserHistory)
-	];
-
+	];	
+	
   if(module.hot){
     store = createStore(reducers, initState, compose(
 		  applyMiddleware(...middlewares),

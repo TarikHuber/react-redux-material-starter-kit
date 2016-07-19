@@ -8,7 +8,7 @@ import { invalidateReposPage,
 		reposQuery,
 		clearRepos} from '../../actions/repos';
 import Repo from '../../components/Repo/Repo';
-import Activity from '../../containers/Activity/Activity';
+import Activity from '../../components/Activity/Activity';
 import MiddleContainer from '../../containers/MiddleContainer/MiddleContainer';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
