@@ -18,12 +18,12 @@ import themes from '../../themes/themes';
 import ThemeDialog from '../../containers/ThemeDialog/ThemeDialog';
 import IntlDialog from '../../containers/IntlDialog/IntlDialog';
 import Toggle from 'material-ui/Toggle';
-
+    
 class MainSettings extends Component{
-	
+	 
 	constructor(props) {
 		super(props)	
-	};
+	}; 
 
 	render(){
  

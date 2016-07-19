@@ -8,7 +8,7 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
@@ -21,14 +21,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [ 'babel' ],
+        loaders: [ 'react-hot','babel' ],
         exclude: /node_modules/,
         include: __dirname
       }, { 
 		test: /\.css$/, 
 		loader: "style-loader!css-loader" 
 	  }, { 
-		test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+		test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,
 		exclude: /node_modules/,
         loader: 'file-loader?name=[name].[ext]' 
       }

@@ -1,5 +1,5 @@
-const config= {
-
+export default {
+ 
 	app: {
 		name:'My App',
 		company: 'My Company',
@@ -17,5 +17,3 @@ const config= {
 	
 
 };
-
-export default config;

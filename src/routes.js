@@ -15,7 +15,7 @@ import MainSettings from './containers/Settings/MainSettings';
 import GitUsers from './containers/GitUsers/GitUsers';
 import Repos from './containers/Repos/Repos';
 import Todo from './containers/Todo/Todo'
- 
+    
 export default (
     <Route path="/" component={App}>
           <IndexRedirect to="dashboard" />
