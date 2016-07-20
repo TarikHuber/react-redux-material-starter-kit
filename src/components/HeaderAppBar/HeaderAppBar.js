@@ -19,16 +19,15 @@ const styles={
 	  }
 };
 
-class MyAppBar extends Component {
+class HeaderAppBar extends Component {
 	constructor(props) {
 		super(props);
 	}
 
 
 	render() {
-		const {title, menu, toggleDrawerOpen, browser , appNavDrawer} = this.props;
-
-		let docked=browser.greaterThan.medium && appNavDrawer.responsive;	
+		const {title, menu, toggleDrawerOpen, docked} = this.props;
+	
 		let appBarMenuStyle=docked?styles.appBarMenu_docked:styles.appBarMenu_undocked; 
 		let rightMenu=<div style={appBarMenuStyle}>{menu}</div>;
 
@@ -47,31 +46,11 @@ class MyAppBar extends Component {
 	}
 }
 
-MyAppBar.propTypes = {
+HeaderAppBar.propTypes = {
 	toggleDrawerOpen: PropTypes.func.isRequired,
-	browser: PropTypes.object.isRequired,
 	title: PropTypes.string,
 	menu: PropTypes.object,
-	appNavDrawer: PropTypes.object.isRequired,
+	docked: PropTypes.bool,
 };
 
-
-const mapStateToProps = (state) => {
-  const {browser, appNavDrawer } = state;
-  return {
-	browser: browser,
-	appNavDrawer: appNavDrawer,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleDrawerOpen: () => {
-      dispatch(toggleDrawerOpen())
-    },
-  }
-};
-
-export default connect(
-  mapStateToProps,mapDispatchToProps
-)(MyAppBar);
+export default (HeaderAppBar);

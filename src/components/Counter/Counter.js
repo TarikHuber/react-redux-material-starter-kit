@@ -9,6 +9,7 @@ import Activity from '../../components/Activity/Activity';
 import MiddleContainer from '../MiddleContainer/MiddleContainer';
 import FooterAppBar from '../FooterAppBar/FooterAppBar';
 import AppBarMenu from '../../components/AppBarMenu/AppBarMenu';
+import DockedContainer from '../../containers/DockedContainer/DockedContainer';
 
 const styles={
 	  txt_number:{
@@ -54,11 +55,14 @@ class Counter extends Component {
 					<h1 style={styles.txt_number}>{value}</h1>
 				</MiddleContainer>
 						
-				<BottomLeftFAB 
-					secondary={true}
-					onTouchTap={onDecrement}
-					icon={<ContentRemove />}
-				/>
+						
+				<DockedContainer>		
+					<BottomLeftFAB 
+						secondary={true}
+						onTouchTap={onDecrement}
+						icon={<ContentRemove />}
+					/>
+				</DockedContainer>
 				
 				<BottomMiddleFAB 
 					secondary={true}

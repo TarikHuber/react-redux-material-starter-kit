@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import { connect } from 'react-redux';
 
 const styles={
 	docked:{
@@ -25,9 +24,8 @@ class BottomLeftFAB extends Component {
   };
   
   render() {
-    const {  onTouchTap, icon, secondary , browser, appNavDrawer} = this.props
+    const {  onTouchTap, icon, secondary , docked} = this.props
 	
-	let docked=browser.greaterThan.medium && appNavDrawer.responsive;
 	let style=docked?styles.docked:styles.undocked; 
 	
     return (
@@ -45,21 +43,11 @@ class BottomLeftFAB extends Component {
 }
 
 BottomLeftFAB.propTypes = {
-	browser: PropTypes.object.isRequired,
-	appNavDrawer: PropTypes.object.isRequired,
+	docked: PropTypes.bool,
 	onTouchTap: PropTypes.func,
 	icon: PropTypes.object,
 	secondary: PropTypes.bool
 }
 
-const mapStateToProps = (state) => {
-  const {browser, appNavDrawer } = state;
-  return {
-	browser: browser,
-	appNavDrawer: appNavDrawer,
-  };
-};
 
-export default connect(
-  mapStateToProps
-)(BottomLeftFAB);
+export default (BottomLeftFAB);

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import MyAppBar from '../../containers/MyAppBar/MyAppBar';
+import DockedContainer from '../../containers/DockedContainer/DockedContainer';
+import HeaderAppBar from '../../containers/HeaderAppBar/HeaderAppBar';
 
 const styles={
 	  content:{
@@ -18,10 +19,12 @@ class Activity extends Component {
 		return (
 			<div>
 				<header>
-					<MyAppBar 
-						title={title} 
-						menu={menu}
-					/>	
+					<DockedContainer>
+						<HeaderAppBar 
+							title={title} 
+							menu={menu}
+						/>	
+					</DockedContainer>
 				</header>
 				<div style={styles.content}>
 					{this.props.children}
