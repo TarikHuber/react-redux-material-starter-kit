@@ -6,10 +6,9 @@ import BottomLeftFAB from '../FloatingActionButtons/BottomLeftFAB';
 import BottomMiddleFAB from '../FloatingActionButtons/BottomMiddleFAB';
 import BottomRightFAB from '../FloatingActionButtons/BottomRightFAB';
 import Activity from '../../components/Activity/Activity';
-import CounterMenu from './CounterMenu';
 import MiddleContainer from '../MiddleContainer/MiddleContainer';
 import FooterAppBar from '../FooterAppBar/FooterAppBar';
- 
+import AppBarMenu from '../../components/AppBarMenu/AppBarMenu';
 
 const styles={
 	  txt_number:{
@@ -23,13 +22,32 @@ class Counter extends Component {
 	
   };  
   
+
   render() {
     const { intl, onReset, value, onIncrement, onDecrement } = this.props
+	
+	
+	const menuItems=[
+		{	key: 'reset',
+			text:intl.messages.reset||'reset',
+			onTouchTap: onReset
+		},
+		{
+			key: 'increment',
+			text:intl.messages.increment||'increment',
+			onTouchTap: onIncrement
+		},
+		{
+			key: 'decrement',
+			text:intl.messages.decrement||'decrement',
+			onTouchTap: onDecrement
+		}	  
+	];
 	
     return (
 		<Activity 
 			title={intl.messages.counter} 
-			menu={<CounterMenu {...this.props} />
+			menu={<AppBarMenu items={menuItems} />
 		}>
 			<div>
 				<MiddleContainer top={'100px'}>
