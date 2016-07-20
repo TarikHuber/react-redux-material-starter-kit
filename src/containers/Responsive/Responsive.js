@@ -1,19 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
 import Activity from '../../components/Activity/Activity';
-
-function browserSelector({browser}) {
-    return {browser}
-	}
 
 class Responsive extends Component {
   constructor(props) {
     super(props)
   }
   
-    
-
   render() {
 
 
