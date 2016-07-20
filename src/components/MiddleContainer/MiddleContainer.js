@@ -5,7 +5,7 @@ class MiddleContainer extends Component {
   render() {  
   
   
-	  const styles={
+	const styles={
 	  
 	  main_container:{
 		float: 'left',
@@ -18,7 +18,6 @@ class MiddleContainer extends Component {
 		float: 'left',
 		position: 'relative',
 		left: '-50%',
-
 	  },
 	  
 }

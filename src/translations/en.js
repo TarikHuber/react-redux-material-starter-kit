@@ -31,4 +31,7 @@ export default {
 	'props': 'Props',
 	'propsanddispatch': 'Params and Dispatch',
 	'navigation': 'Navigation',
+	'reset': 'Reset',
+	'increment': 'Increment',
+	'decrement': 'Descrment', 
 };
