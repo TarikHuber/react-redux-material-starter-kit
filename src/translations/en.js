@@ -1,15 +1,29 @@
 // English translations
 export default {
+	
+	//General
+	'add': 'Add',
+	'cancel': 'Cancel',
+	'submit': 'Submit',
+	'required': 'Field is required',
+	
 	'lang.en': 'English',
 	'lang.de': 'German',
+	
 	'clicked': 'Clicked',
-	'times': 'times',
+	
 	'settings': 'Settings',
+	'general': 'General',
+	'navigation': 'Navigation',
 	'language': 'Language',
 	'theme': 'Theme',
 	'light': 'Light',
 	'dark': 'Dark',
-	'custom1': 'Custom1',
+	'custom1': 'Custom1',	
+	'select_theme': 'Select theme',
+	'select_language': 'Select language',
+	
+	
 	'foo': 'Foo',
 	'bar': 'Bar', 
 	'dashboard': 'Dashboard',
@@ -17,20 +31,24 @@ export default {
 	'basic': 'Basic',
 	'advanced': 'Advanced',
 	'counter': 'Counter',
-	'todo': 'ToDo',
+	
 	'responsive': 'Responsive', 
-	'add': 'Add',
+	'props': 'Props',
+	'propsanddispatch': 'Params and Dispatch',
+	
+	//Todo
+	'todo': 'ToDo',
+	'todo_add': 'Add todo',
+	'todo_label': 'Enter todo',
+	'todo_hint': 'Todo text',
 	'all': 'All',
 	'completed': 'Completed',
 	'active': 'Active',
+	
 	'signin': 'Sign in',
-	'general': 'General',
-	'select_theme': 'Select theme',
-	'select_language': 'Select language',
-	'cancel': 'Cancel',
-	'props': 'Props',
-	'propsanddispatch': 'Params and Dispatch',
-	'navigation': 'Navigation',
+	
+	
+	
 	'reset': 'Reset',
 	'increment': 'Increment',
 	'decrement': 'Descrment', 

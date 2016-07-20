@@ -4,7 +4,16 @@ import {List, ListItem} from 'material-ui/List';
 
 const Todo = ({ onClickHandler, completed, text , id}) => (
 
-  <ListItem  key={id} primaryText={text} onClick={onClickHandler} rightToggle={<Toggle key={id} toggled={completed}/>} />
+  <ListItem  
+	primaryText={text} 
+	primaryTogglesNestedList={true}
+	rightToggle={
+		<Toggle 
+			toggled={completed}
+			onToggle={onClickHandler}
+		/>
+	} 
+  />
 )
 
 Todo.propTypes = {

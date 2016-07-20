@@ -1,6 +1,12 @@
 
 const de2={
 	
+	//General
+	'all': 'Alle',
+	'cancel': 'Abbrechen',
+	'submit': 'Bestätigen',
+	'required': 'Feld ist erfolderlich',
+	
 	'lang.en': 'English',
 	'lang.de': 'Deutsch',
 	
@@ -31,12 +37,19 @@ const de2={
 	'propsanddispatch': 'Params und Dispatch',
 	
 	'add': 'Hinzufügen',
-	'all': 'Alle',
+	
+	//Todo
+	'todo': 'Aufgabe',
+	'todo_add': 'Aufgabe hinzufügen',
+	'todo_label': 'Aufgabe eingeben',
+	'todo_hint': 'Aufgabentext',
 	'completed': 'Erledigt',
 	'active': 'Offen',
 	
+	
 	'signin': 'Anmelden',
-	'cancel': 'Abbrechen',
+	
+	
 	
 	'reset': 'Zurücksetzten',
 	'increment': 'Erhöhen',

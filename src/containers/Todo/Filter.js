@@ -1,18 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../../actions/todo'
-import {setTodoDialogOpen, setErrorText} from '../../actions/todoDialog';
 import { setVisibilityFilter } from '../../actions/todo';
-import {  FormattedNumber, FormattedMessage} from 'react-intl';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import { messages } from './Todo.i18n';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import ContentFilter from 'material-ui/svg-icons/content/filter-list';
 
 class Filter extends Component {
@@ -23,7 +14,7 @@ class Filter extends Component {
   
 
   render(){
-	const {visibilityFilter, todoDialog, setVisibilityFilter, addTodo, setErrorText } = this.props;
+	const {messages , visibilityFilter, setVisibilityFilter } = this.props;
   
  function handleChangeSingle (event, value) {
     setVisibilityFilter(value);
@@ -37,9 +28,9 @@ class Filter extends Component {
 	  value={visibilityFilter}
 	  multiple={false}
 	>
-	  <MenuItem value="SHOW_ALL" primaryText={<FormattedMessage {...messages.filter.all}/>} />
-	  <MenuItem value="SHOW_COMPLETED" primaryText={<FormattedMessage {...messages.filter.completed}/>} />
-	  <MenuItem value="SHOW_ACTIVE" primaryText={<FormattedMessage {...messages.filter.active}/>} />
+	  <MenuItem value="SHOW_ALL" primaryText={messages.all||'all'} />
+	  <MenuItem value="SHOW_COMPLETED" primaryText={messages.completed||'completed'} />
+	  <MenuItem value="SHOW_ACTIVE" primaryText={messages.active||'active'} />
 	</IconMenu>
   )
   }
@@ -47,20 +38,17 @@ class Filter extends Component {
 
 
 Filter.propTypes = {
-
-  todoDialog: PropTypes.object.isRequired,
-  setVisibilityFilter: PropTypes.func.isRequired,
-  addTodo: PropTypes.func.isRequired,
-  setErrorText: PropTypes.func.isRequired,
-  visibilityFilter:PropTypes.string.isRequired,
+	messages: PropTypes.object.isRequired,
+	setVisibilityFilter: PropTypes.func.isRequired,
+	visibilityFilter:PropTypes.string.isRequired,
 }
 
 function mapStateToProps(state) {
 
-	 const { visibilityFilter, todoDialog} = state;
+	 const { intl, visibilityFilter} = state;
 
 	 return {
-			todoDialog:todoDialog,
+			messages: intl.messages,
 			visibilityFilter: visibilityFilter,
 		 };
 
@@ -73,16 +61,6 @@ const mapDispatchToProps = (dispatch) => {
 	setVisibilityFilter:(filter)=>{
 		dispatch(setVisibilityFilter(filter));
 	},
-	addTodo:(text)=>{
-		dispatch(addTodo(text));
-	},
-	setErrorText:(text)=>{
-		dispatch(setErrorText(text));
-	},
-	
-	
-	
-
   }
 }
 

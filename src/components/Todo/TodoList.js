@@ -6,13 +6,14 @@ import Divider from 'material-ui/Divider';
 const TodoList = ({ todos, onTodoClick }) => (
 
 	   <List>
-		{todos.map(todo =><div>
-		  <Todo
-			key={todo.id}
-			{...todo}
-			onClickHandler={() => onTodoClick(todo.id)}
-		  />
-		  <Divider /></div>
+		{todos.map(todo =>
+			<div key={todo.id}>
+			  <Todo
+				{...todo}
+				onClickHandler={() => onTodoClick(todo.id)}
+			  />
+			  <Divider/>
+			</div>
 		)}
 	  </List>
 
