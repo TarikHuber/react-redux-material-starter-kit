@@ -6,7 +6,7 @@ import TodoDialog from '../../containers/Todo/TodoDialog'
 import Filter from '../../containers/Todo/Filter'
 import VisibleTodoList from '../../containers/Todo/VisibleTodoList'
 import {setTodoDialogOpen} from '../../actions/todoDialog';
-import AppBarMenu from '../../components/AppBarMenu/AppBarMenu';
+import AppBarMenu from '../../containers/AppBarMenu/AppBarMenu';
 import BottomRightFAB from '../../components/FloatingActionButtons/BottomRightFAB';
 
 class Todo extends Component {

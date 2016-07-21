@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import AppBarMenu from '../../components/AppBarMenu/AppBarMenu';
+import AppBarMenu from '../../containers/AppBarMenu/AppBarMenu';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
@@ -204,7 +204,7 @@ class Dashboard extends Component{
               </CardActions>
             </Card>
 
-            <Paper key={"2"} style={styles.paper} zDepth={3} />
+            <Paper key={"2"} style={styles.paper}  />
 
           </ResponsiveReactGridLayout>
         </div>

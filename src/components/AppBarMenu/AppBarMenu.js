@@ -11,12 +11,12 @@ class AppBarMenu extends Component{
 
 	render(){
 
-		const {  items } = this.props
+		const {  items , appStyle} = this.props
 
 		return (
 				<IconMenu
 					iconButtonElement={	<IconButton>
-						<MoreVertIcon color='white' />
+						<MoreVertIcon color={appStyle.theme.source.palette.alternateTextColor} />
 					</IconButton>}
 					>
 					{items.map(item =>
@@ -32,6 +32,7 @@ class AppBarMenu extends Component{
 
 AppBarMenu.propTypes = {
 	items: PropTypes.array.isRequired,
+	appStyle: PropTypes.object.isRequired,
 }
 
 export default (AppBarMenu);

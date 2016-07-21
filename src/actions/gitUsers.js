@@ -18,7 +18,7 @@ export function selectUsersPage(page) {
   };
 }
 
-export function usersQuery(query) {
+export function setUsersQuery(query) {
   return {
     type: USERS_QUERY,
     query,

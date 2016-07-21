@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     const {appStyle } = this.props;
 

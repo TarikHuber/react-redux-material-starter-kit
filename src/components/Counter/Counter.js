@@ -8,7 +8,7 @@ import BottomRightFAB from '../FloatingActionButtons/BottomRightFAB';
 import Activity from '../../components/Activity/Activity';
 import MiddleContainer from '../MiddleContainer/MiddleContainer';
 import FooterAppBar from '../FooterAppBar/FooterAppBar';
-import AppBarMenu from '../../components/AppBarMenu/AppBarMenu';
+import AppBarMenu from '../../containers/AppBarMenu/AppBarMenu';
 import DockedContainer from '../../containers/DockedContainer/DockedContainer';
 
 const styles={
