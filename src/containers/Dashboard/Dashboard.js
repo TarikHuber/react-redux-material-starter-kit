@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
- 
+
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import {GridList, GridTile} from 'material-ui/GridList';
@@ -62,35 +62,35 @@ class Dashboard extends Component{
 	};
 
 	render(){
-		
+
 		function handleLayoutChange(layout){
 			layoutToSave=layout;
 		};
-			
+
 		const { intl, browser, appNavDrawer, theme, dashboard, onLayoutChange} = this.props
-	
+
 		var layout = [
 		  {i: '1', x: 0, y: 0, w: 4, h: 4.2,isResizable:false},
 		  {i: '2', x: 0, y: 0, w: 3, h: 1},
 		  {i: '3', x: 4, y: 0, w: 3, h: 3},
 		  {i: '4', x: 4, y: 0, w: 3, h: 2}
 		];
-	
-	
+
+
 		var layouts = dashboard.layout?{lg:dashboard.layout}:{lg:layout}
-		
-		const menu=<IconMenu								
+
+		const menu=<IconMenu
 						iconButtonElement={
 						  <IconButton><MoreVertIcon color={'white'}/></IconButton>
 						}
 						targetOrigin={{horizontal: 'right', vertical: 'top'}}
 						anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-						
+
 					  >
 						<MenuItem primaryText="Save" onTouchTap={()=>onLayoutChange(layoutToSave)}/>
 						<MenuItem primaryText="Reset" onTouchTap={()=>onLayoutChange(undefined)}/>
 					</IconMenu>;
-		
+
 		const tilesData = [
 		  {
 			img: 'static/vegetables-790022_640.jpg',
@@ -128,18 +128,18 @@ class Dashboard extends Component{
 			author: 'BkrmadtyaKarki',
 		  },
 		];
-	
-	 
-	  return (  
-	  
+
+
+	  return (
+
 		<Activity title={intl.messages.dashboard} nav_index='/dashboard' menu={menu} >
 		<div>
-			<ResponsiveReactGridLayout 
+			<ResponsiveReactGridLayout
 				isDraggable={browser.greaterThan.medium}
 				isResizable={browser.greaterThan.medium}
 				onLayoutChange={handleLayoutChange}
-				className="layout" 
-				layouts={layouts} 
+				className="layout"
+				layouts={layouts}
 				autoSize={true}
 				breakpoints={{lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0}}
 				cols={{lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}}
@@ -168,7 +168,7 @@ class Dashboard extends Component{
 				  <FlatButton label="Action2" />
 				</CardActions>
 			  </Card>
-			  
+
 			  <GridList key={"3"}
 				  cellHeight={200}
 				  style={styles.gridList}
@@ -185,7 +185,7 @@ class Dashboard extends Component{
 					</GridTile>
 				  ))}
 				</GridList>
-			  
+
 				 <Card key={"4"}>
 					<CardHeader
 					  title="Without Avatar"
@@ -204,16 +204,16 @@ class Dashboard extends Component{
 					  <FlatButton label="Action2" />
 					</CardActions>
 				  </Card>
-				  
+
 				  <Paper key={"2"} style={style} zDepth={3} />
-			  
-			  
-			 
-			</ResponsiveReactGridLayout>	
-		
+
+
+
+			</ResponsiveReactGridLayout>
+
 		</div>
 		</Activity>
-	  
+
 	  );
 	}
 };
