@@ -17,9 +17,9 @@ import Repos from './containers/Repos/Repos';
 import Todo from './containers/Todo/Todo'
 import config from './config';
 
-export default(
+export default( 
   <Route path={config.app.root_path} component={App}>
-    <IndexRedirect to="dashboard"/>
+    <IndexRedirect to={config.app.route_index}/>
     <Route path="app" component={Dashboard}/>
     <Redirect from="app" to="dashboard"/>
     <Route path="signin" component={SignIn}/>

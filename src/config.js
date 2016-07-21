@@ -2,6 +2,7 @@ export default {
 
   app: {
     root_path: '/',
+    route_index:'dashboard',
     name: 'My App',
     company: 'My Company',
   },

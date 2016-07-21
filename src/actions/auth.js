@@ -1,10 +1,14 @@
+import {  push } from 'react-router-redux'
+import {  callApi } from '../utils/api';
+import app_config from '../config';
+
 export const API_TOKEN = 'apiToken';
 export const USER = 'user';
+
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT = 'LOGOUT';
-import {  push } from 'react-router-redux'
 
 function loginRequest(user) {
   return {
@@ -13,19 +17,16 @@ function loginRequest(user) {
   };
 }
 
-function loginSuccess(payload, redirect) {
+function loginSuccess(payload, config) {
   return dispatch => {
     dispatch(setUserData(payload));
-
-    console.log(redirect);
-    dispatch(push(redirect||'dashboard'));
+    dispatch(push(config.redirect||app_config.app.route_index));
   }
 }
 
 function setUserData(payload){
   const apiToken = payload[API_TOKEN];
   const user = payload[USER];
-
 
   return {
     type: LOGIN_SUCCESS,
@@ -64,53 +65,4 @@ export function login(user, password, redirect) {
     redirect: redirect,
   };
   return callApi('/api/login', config, loginRequest(user), loginSuccess, loginFailure);
-}
-
-
-function decodeUserProfile(idToken) {
-  try {
-    return jwt_decode(idToken);
-  } catch (err) {
-    return null;
-  }
-}
-
-function callApi(url, config, onRequest, onRequestSuccess, onRequestFailure) {
-  return dispatch => {
-    dispatch(onRequest);
-
-    return fetch(url, config)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then((json) => {
-      dispatch(onRequestSuccess(json, config.redirect));
-    }).catch((error) => {
-      const response = error.response;
-      if (response === undefined) {
-        dispatch(onRequestFailure(error));
-      } else {
-        parseJSON(response)
-        .then((json) => {
-          error.status = response.status;
-          error.statusText = response.statusText;
-          error.message = json.message;
-          dispatch(onRequestFailure(error));
-        }
-      );
-    }
-  });
-};
-}
-
-export function checkStatus(response) {
-  if (!response.ok) {   // (response.status < 200 || response.status > 300)
-    const error = new Error(response.statusText);
-    error.response = response;
-    throw error;
-  }
-  return response;
-}
-
-export function parseJSON(response) {
-  return response.json();
 }

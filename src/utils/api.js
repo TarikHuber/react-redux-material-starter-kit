@@ -16,6 +16,7 @@ export function parseJSON(response) {
  * A utility to call a restful service.
  *
  * @autor Yunjun Mu: https://github.com/cloudmu
+ * @modifications Tarik Huber
  * @param url The restful service end point.
  * @config The config object of the call. Can be null.
  * @onRequest The callback function to create request action.
@@ -32,11 +33,11 @@ export function callApi(url, config, onRequest, onRequestSuccess, onRequestFailu
       .then(checkStatus)
       .then(parseJSON)
       .then((json) => {
-        dispatch(onRequestSuccess(json));
+        dispatch(onRequestSuccess(json, config));
       }).catch((error) => {
         const response = error.response;
         if (response === undefined) {
-          dispatch(onRequestFailure(error));
+          dispatch(onRequestFailure(error, config));
         } else {
           parseJSON(response)
             .then((json) => {
