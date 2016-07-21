@@ -1,5 +1,6 @@
 import 'isomorphic-fetch';
 import {  callApi } from '../utils/api';
+import config from '../config';
 
 export const SELECT_USERS_PAGE = 'SELECT_USERS_PAGE';
 export const USERS_QUERY = 'USERS_QUERY';
@@ -9,7 +10,6 @@ export const INVALIDATE_USERS_PAGE = 'INVALIDATE_USERS_PAGE';
 export const USERS_REQUEST = 'USERS_REQUEST';
 export const USERS_SUCCESS = 'USERS_SUCCESS';
 export const USERS_FAILURE = 'USERS_FAILURE';
-
 
 export function selectUsersPage(page) {
   return {
@@ -70,13 +70,10 @@ function usersFailure(page) {
   };
 }
 
-const API_ROOT = 'https://api.github.com';
-
 function fetchUsers(page, query) {
-	
-	let query_params='q='+(query||'followers:>0');
-	
-  const url = `${API_ROOT}/search/users?${query_params}&order=desc&page=${page}`;
+
+  let query_params='q='+(query||'followers:>0');
+  const url = `${config.api.root}/search/users?${query_params}&order=desc&page=${page}`;
   return callApi(url, null, usersRequest, usersSuccess(page), usersFailure(page));
 }
 
@@ -106,8 +103,8 @@ export function fetchTopUsersIfNeeded(page, query) {
 }
 
 export function fetchUsersForQuery(query) {
-	return (dispatch, getState) => {
-      return dispatch(fetchUsers(1,query));
-  
+  return (dispatch, getState) => {
+    return dispatch(fetchUsers(1,query));
+
   };
 }

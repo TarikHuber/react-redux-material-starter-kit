@@ -1,5 +1,6 @@
 import 'isomorphic-fetch';
 import { callApi } from '../utils/api';
+import config from '../config';
 
 export const SELECT_REPOS_PAGE = 'SELECT_REPOS_PAGE';
 export const REPOS_QUERY = 'REPOS_QUERY';
@@ -9,7 +10,7 @@ export const INVALIDATE_REPOS_PAGE = 'INVALIDATE_REPOS_PAGE';
 export const REPOS_REQUEST = 'REPOS_REQUEST';
 export const REPOS_SUCCESS = 'REPOS_SUCCESS';
 export const REPOS_FAILURE = 'REPOS_FAILURE';
- 
+
 export function selectReposPage(page) {
   return {
     type: SELECT_REPOS_PAGE,
@@ -53,7 +54,7 @@ function reposSuccess(page, query) {
       page,
       repos: payload.items,
       totalCount: payload.total_count,
-	  query:query,
+      query:query,
     };
   };
 }
@@ -64,20 +65,18 @@ function reposFailure(page) {
   return function (error) {
     return {
       type: REPOS_FAILURE,
-      page, 
+      page,
       error,
     };
   };
 }
 
-const API_ROOT = 'https://api.github.com';
-
 function fetchRepos(page, query) {
-	
+
   let query_params='q='+(query||'stars:>0');
-	
-  const url = `${API_ROOT}/search/repositories?${query_params}&order=desc&page=${page}`;
-  
+
+  const url = `${config.api.root}/search/repositories?${query_params}&order=desc&page=${page}`;
+
   return callApi(url, null, reposRequest(page, query), reposSuccess(page, query), reposFailure(page, query));
 }
 
@@ -88,7 +87,7 @@ function shouldFetchRepos(state, page) {
     // Not cached, should fetch
     return true;
   }
-
+  
   if (repos.isFetching) {
     // Shouldn't fetch since fetching is running
     return false;
@@ -107,9 +106,9 @@ export function fetchTopReposIfNeeded(page, query) {
 }
 
 export function fetchReposForQuery(query) {
-	
-	return (dispatch, getState) => {
-		return dispatch(fetchRepos(1, query));
-	};
-	
+
+  return (dispatch, getState) => {
+    return dispatch(fetchRepos(1, query));
+  };
+
 }

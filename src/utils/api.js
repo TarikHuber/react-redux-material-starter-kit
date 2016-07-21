@@ -1,7 +1,4 @@
 
-const API_ROOT = 'https://api.github.com';
-const API_TOKEN='apiToken';
-
 export function checkStatus(response) {
   if (!response.ok) {   // (response.status < 200 || response.status > 300)
     const error = new Error(response.statusText);

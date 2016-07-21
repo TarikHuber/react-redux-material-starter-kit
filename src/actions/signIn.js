@@ -4,7 +4,7 @@ export const SET_SIGNIN_TEXT_ERRORS = 'SET_SIGNIN_TEXT_ERRORS';
 export function setSignInDialogOpen(open) {
   return {
     type: SET_SIGNIN_DIALOG_OPEN,
-	open: open,	
+    open: open,
   };
 }
 
@@ -12,7 +12,7 @@ export function setSignInDialogOpen(open) {
 export function setSignInTextErrors(errors) {
   return {
     type: SET_SIGNIN_TEXT_ERRORS,
-	errors: errors,
-	
+    errors: errors,
+
   };
 }

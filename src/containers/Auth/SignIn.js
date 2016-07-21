@@ -23,187 +23,187 @@ const fields ={
 
 const styles={
 
-	  
-	  main_container:{
+
+	main_container:{
 		float: 'left',
 		position: 'relative',
 		left: '50%',
 		top: '50%',
-	  },
+	},
 
-	  fixer_container:{
+	fixer_container:{
 		float: 'left',
 		position: 'relative',
 		left: '-50%',
 		top: '-50%',
-	  },
-	  
-	  button:{
+	},
+
+	button:{
 		float: 'right',
-	  },
+	},
 }
 
 export function handleRehidration(){
-	
+
 
 	if(location!==undefined && location.query.redirect!==undefined){
 		to(location.query.redirect);
 	}
-	
+
 }
 
 class SignIn extends Component {
-	
+
 	constructor(props) {
-		super(props)		
+		super(props)
 	};
-	  
 
-	  
-  componentWillMount(){
-	  
-	  location=this.props.location;
-	  to=this.props.to;
-  }
-	  
-  
-  render(){
-	const {intl , login ,signIn, setSignInDialogOpen, setSignInTextErrors, to, location } = this.props;
-  
-	
-  
-	function handleOpen(){
-		setSignInDialogOpen(true);
-	};
-	
-	function handleClose(){
-		//setErrorText(undefined);
-		setSignInDialogOpen(false);
-	};
-	
-	function handleSubmit(refs){
-		
-		let errors={};
-		
-		Object.keys(refs).forEach(function (key) {	  
-		  if(!refs[key].input.value.trim()){
-				errors[key]="Is required!";
-			}
-		});
-		
-		setSignInTextErrors(errors);
 
-		if(Object.getOwnPropertyNames(errors).length>0){
-			return;
-		}
-		
-		let user=refs[fields.userName].input.value;
-		let password=refs[fields.password].input.value;
 
-		
-		
-		login(user, password, location.query.redirect);
-		
-	};
-   
-    function handleKeyDown(event, refs){
-		
-		
-		if(event.keyCode===13){
-			handleSubmit(refs);
-		}
+	componentWillMount(){
+
+		location=this.props.location;
+		to=this.props.to;
 	}
-   
 
-	return (
-	
-		<Activity nav_index="/signin" title={intl.messages.signin}>
-			<MiddleContainer top="50px">
+
+	render(){
+		const {intl , login ,signIn, setSignInDialogOpen, setSignInTextErrors, to, location } = this.props;
+
+
+
+		function handleOpen(){
+			setSignInDialogOpen(true);
+		};
+
+		function handleClose(){
+			//setErrorText(undefined);
+			setSignInDialogOpen(false);
+		};
+
+		function handleSubmit(refs){
+
+			let errors={};
+
+			Object.keys(refs).forEach(function (key) {
+				if(!refs[key].input.value.trim()){
+					errors[key]="Is required!";
+				}
+			});
+
+			setSignInTextErrors(errors);
+
+			if(Object.getOwnPropertyNames(errors).length>0){
+				return;
+			}
+
+			let user=refs[fields.userName].input.value;
+			let password=refs[fields.password].input.value;
+
+
+
+			login(user, password, location.query.redirect);
+
+		};
+
+		function handleKeyDown(event, refs){
+
+
+			if(event.keyCode===13){
+				handleSubmit(refs);
+			}
+		}
+
+
+		return (
+
+			<Activity nav_index="/signin" title={intl.messages.signin}>
+				<MiddleContainer top="50px">
 					<form onSubmit={e => {
-						e.preventDefault();		
-						handleSubmit(this.refs);
+							e.preventDefault();
+							handleSubmit(this.refs);
 						}}>
-					   
-					   
-						<TextField 
+
+
+						<TextField
 							ref={fields.userName}
 							hintText="Enter any username you want"
 							errorText={signIn.errors.userName}
 							floatingLabelText="Username"
 							onKeyDown ={(event)=>handleKeyDown(event, this.refs)}
-						/> <br />
-					   
-						<TextField 
+							/> <br />
+
+						<TextField
 							ref={fields.password}
 							type="password"
 							hintText="Enter any password"
 							errorText={signIn.errors.password}
 							floatingLabelText="Password"
 							onKeyDown ={(event)=>handleKeyDown(event, this.refs)}
-						/> <br />
-						
-						<RaisedButton
-						  label="Sign in"
-						  labelPosition="after"
-						  secondary={true}
-						  icon={<ActionLockOpen  />}
-						  style={styles.button}
-						  onTouchTap={()=>handleSubmit(this.refs)}
-							  
-						  
-						/> <br />
-						  
-						  
-						
-						  
-					</form>
-			</MiddleContainer>
-		</Activity>
+							/> <br />
 
-	)
-  }
+						<RaisedButton
+							label="Sign in"
+							labelPosition="after"
+							secondary={true}
+							icon={<ActionLockOpen  />}
+							style={styles.button}
+							onTouchTap={()=>handleSubmit(this.refs)}
+
+
+							/> <br />
+
+
+
+
+					</form>
+				</MiddleContainer>
+			</Activity>
+
+		)
+	}
 }
 
 
 SignIn.propTypes = {
-  intl: PropTypes.object.isRequired,
-  signIn: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired,
-  setSignInDialogOpen: PropTypes.func.isRequired,
-  setSignInTextErrors: PropTypes.func.isRequired,
-  login: PropTypes.func.isRequired,
-  to: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
+	intl: PropTypes.object.isRequired,
+	signIn: PropTypes.object.isRequired,
+	auth: PropTypes.object.isRequired,
+	setSignInDialogOpen: PropTypes.func.isRequired,
+	setSignInTextErrors: PropTypes.func.isRequired,
+	login: PropTypes.func.isRequired,
+	to: PropTypes.func.isRequired,
+	location: PropTypes.object.isRequired,
 }
 
 function mapStateToProps(state) {
 
-	 const { intl, auth, signIn} = state;
+	const { intl, auth, signIn} = state;
 
-	 return {
-			intl:intl,
-			signIn:signIn,
-			auth: auth,
-		 };
+	return {
+		intl:intl,
+		signIn:signIn,
+		auth: auth,
+	};
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
+	return {
 
-	setSignInDialogOpen:(open)=>{
-		dispatch(setSignInDialogOpen(open));
-	},
-	setSignInTextErrors:(errors)=>{
-		dispatch(setSignInTextErrors(errors));
-	},
-	login:( user, password, redirect)=>{
-		dispatch(login( user, password, redirect));
-	},
-	to: (path)=>{
-		dispatch(push(path))
-	},
+		setSignInDialogOpen:(open)=>{
+			dispatch(setSignInDialogOpen(open));
+		},
+		setSignInTextErrors:(errors)=>{
+			dispatch(setSignInTextErrors(errors));
+		},
+		login:( user, password, redirect)=>{
+			dispatch(login( user, password, redirect));
+		},
+		to: (path)=>{
+			dispatch(push(path))
+		},
 
-  }
+	}
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(SignIn);

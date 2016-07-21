@@ -16,23 +16,23 @@ function loginRequest(user) {
 function loginSuccess(payload, redirect) {
   return dispatch => {
     dispatch(setUserData(payload));
-	
-	console.log(redirect);
-	dispatch(push(redirect||'dashboard'));
+
+    console.log(redirect);
+    dispatch(push(redirect||'dashboard'));
   }
 }
 
 function setUserData(payload){
-	const apiToken = payload[API_TOKEN];
-	const user = payload[USER];
-  
+  const apiToken = payload[API_TOKEN];
+  const user = payload[USER];
+
 
   return {
     type: LOGIN_SUCCESS,
     user: user,
-	apiToken: apiToken,
+    apiToken: apiToken,
   };
-	
+
 }
 
 function loginFailure(error) {
@@ -41,16 +41,16 @@ function loginFailure(error) {
     error,
   };
 }
-  
-export function logout() {	
- return {
+
+export function logout() {
+  return {
     type: LOGOUT,
   };
-}  
-  
-  
+}
+
+
 export function login(user, password, redirect) {
-	
+
   const config = {
     method: 'post',
     headers: {
@@ -61,11 +61,11 @@ export function login(user, password, redirect) {
       user,
       password,
     }),
-	redirect: redirect,
+    redirect: redirect,
   };
   return callApi('/api/login', config, loginRequest(user), loginSuccess, loginFailure);
 }
-  
+
 
 function decodeUserProfile(idToken) {
   try {
@@ -80,26 +80,26 @@ function callApi(url, config, onRequest, onRequestSuccess, onRequestFailure) {
     dispatch(onRequest);
 
     return fetch(url, config)
-      .then(checkStatus)
-      .then(parseJSON)
-      .then((json) => {
-        dispatch(onRequestSuccess(json, config.redirect));
-      }).catch((error) => {
-        const response = error.response;
-        if (response === undefined) {
+    .then(checkStatus)
+    .then(parseJSON)
+    .then((json) => {
+      dispatch(onRequestSuccess(json, config.redirect));
+    }).catch((error) => {
+      const response = error.response;
+      if (response === undefined) {
+        dispatch(onRequestFailure(error));
+      } else {
+        parseJSON(response)
+        .then((json) => {
+          error.status = response.status;
+          error.statusText = response.statusText;
+          error.message = json.message;
           dispatch(onRequestFailure(error));
-        } else {
-          parseJSON(response)
-            .then((json) => {
-              error.status = response.status;
-              error.statusText = response.statusText;
-              error.message = json.message;
-              dispatch(onRequestFailure(error));
-            }
-          );
         }
-      });
-  };
+      );
+    }
+  });
+};
 }
 
 export function checkStatus(response) {
@@ -114,6 +114,3 @@ export function checkStatus(response) {
 export function parseJSON(response) {
   return response.json();
 }
-
-
-

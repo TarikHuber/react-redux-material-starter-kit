@@ -7,29 +7,29 @@ import {
 
 
 const initialState = {
-   user: undefined,
-   apiToken: undefined,
-   loggingIn: false,
-   loginError: null,
+  user: undefined,
+  apiToken: undefined,
+  loggingIn: false,
+  loginError: null,
 };
 
 
 export default function auth(state = initialState, action) {
   switch (action.type) {
-  case LOGIN_REQUEST:
+    case LOGIN_REQUEST:
     return Object.assign({}, state, {loggingIn: true});
-  case LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
     return Object.assign({}, state, {
       loggingIn: false, user: action.user, apiToken:action.apiToken});
-  case LOGIN_FAILURE:
-    return {
-      ...state,
-      loggingIn: false,
-      user: null,
-	loginError: action.error};
-  case LOGOUT:
-    return {...state, user:undefined, apiToken:undefined};
-  default:
-    return state;
-  }
-}
+      case LOGIN_FAILURE:
+      return {
+        ...state,
+        loggingIn: false,
+        user: null,
+        loginError: action.error};
+        case LOGOUT:
+        return {...state, user:undefined, apiToken:undefined};
+        default:
+        return state;
+      }
+    }
