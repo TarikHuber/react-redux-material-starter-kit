@@ -5,27 +5,27 @@ import Divider from 'material-ui/Divider';
 
 const TodoList = ({ todos, onTodoClick }) => (
 
-	   <List>
+	<List>
 		{todos.map(todo =>
 			<div key={todo.id}>
-			  <Todo
-				{...todo}
-				onClickHandler={() => onTodoClick(todo.id)}
-			  />
-			  <Divider/>
+				<Todo
+					{...todo}
+					onClickHandler={() => onTodoClick(todo.id)}
+					/>
+				<Divider/>
 			</div>
 		)}
-	  </List>
+	</List>
 
 )
 
 TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+	todos: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		completed: PropTypes.bool.isRequired,
+		text: PropTypes.string.isRequired
+	}).isRequired).isRequired,
+	onTodoClick: PropTypes.func.isRequired
 }
 
 export default TodoList

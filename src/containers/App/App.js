@@ -10,28 +10,24 @@ class App extends Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     const {appStyle } = this.props;
 
-
     return (
-	
-	<MuiThemeProvider muiTheme={getMuiTheme(appStyle.theme.source)}>
-		<div>
-			<DockedContainer>
-				<AppNavDrawer location={this.props.location}/>
-			</DockedContainer>
-			<DockedContainer>
-				<ContentContainer>
-					{this.props.children}
-				</ContentContainer>
-			</DockedContainer>
-		</div>  	
-     </MuiThemeProvider>
-				
+      <MuiThemeProvider muiTheme={getMuiTheme(appStyle.theme.source)}>
+        <div>
+          <DockedContainer>
+            <AppNavDrawer location={this.props.location}/>
+          </DockedContainer>
+          <DockedContainer>
+            <ContentContainer>
+              {this.props.children}
+            </ContentContainer>
+          </DockedContainer>
+        </div>
+      </MuiThemeProvider>
     );
-
   }
 }
 
@@ -41,11 +37,10 @@ App.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
-
 const mapStateToProps = (state) => {
   const {appStyle } = state;
   return {
-	appStyle:appStyle,
+    appStyle:appStyle,
   };
 };
 

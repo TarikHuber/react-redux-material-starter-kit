@@ -7,8 +7,8 @@ import App from './containers/App/App';
 import SignIn from './containers/Auth/SignIn';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Foo from './components/BasicExamples/Foo';
-import PropsExample from './components/BasicExamples/PropsExample';
-import PropsAndDispatchExample from './components/BasicExamples/PropsAndDispatchExample';
+import PropsExample from './containers/BasicExamples/PropsExample';
+import PropsAndDispatchExample from './containers/BasicExamples/PropsAndDispatchExample';
 import Counter from './containers/Counter/Counter';
 import Responsive from './containers/Responsive/Responsive';
 import MainSettings from './containers/Settings/MainSettings';
@@ -17,7 +17,7 @@ import Repos from './containers/Repos/Repos';
 import Todo from './containers/Todo/Todo'
 import config from './config';
 
-export default( 
+export default(
   <Route path={config.app.root_path} component={App}>
     <IndexRedirect to={config.app.route_index}/>
     <Route path="app" component={Dashboard}/>

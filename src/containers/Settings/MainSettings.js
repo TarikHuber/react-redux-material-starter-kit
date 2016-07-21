@@ -10,7 +10,7 @@ import Style from 'material-ui/svg-icons/image/style';
 import ActionLanguage from 'material-ui/svg-icons/action/language';
 import ActionChromeReaderMode from 'material-ui/svg-icons/action/chrome-reader-mode';
 import Activity from '../../components/Activity/Activity';
-import {setSelectedIndex, setResponsive} from '../../actions/appNavDrawer';
+import {setSelectedIndex, setResponsive} from '../../actions/navigation';
 import {setThemeDialogOpen} from '../../actions/appStyle';
 import {setIntlDialogOpen} from '../../actions/intl';
 import languages from '../../translations/languages';
@@ -33,7 +33,7 @@ class MainSettings extends Component {
             setThemeDialogOpen,
             setIntlDialogOpen,
             setResponsive,
-            appNavDrawer
+            navigation
         } = this.props;
         const currentLanguage = find(languages, {key: intl.locale});
 
@@ -57,11 +57,11 @@ class MainSettings extends Component {
                     <List>
                         <Subheader>{intl.messages.navigation || 'navigation'}</Subheader>
                         <ListItem leftIcon={< ActionChromeReaderMode />} primaryTogglesNestedList={true} primaryText={intl.messages.responsive || 'responsive'} rightToggle={< Toggle toggled = {
-                            appNavDrawer.responsive
+                            navigation.responsive
                         }
                         onToggle = {
                             () => {
-                                setResponsive(!appNavDrawer.responsive)
+                                setResponsive(!navigation.responsive)
                             }
                         } />}/>
 
@@ -83,14 +83,14 @@ MainSettings.propTypes = {
     setThemeDialogOpen: PropTypes.func.isRequired,
     setIntlDialogOpen: PropTypes.func.isRequired,
     setResponsive: PropTypes.func.isRequired,
-    appNavDrawer: PropTypes.object.isRequired
+    navigation: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state) {
 
-    const {intl, appStyle, appNavDrawer} = state;
+    const {intl, appStyle, navigation} = state;
 
-    return {intl: intl, appStyle: appStyle, appNavDrawer: appNavDrawer};
+    return {intl: intl, appStyle: appStyle, navigation: navigation};
 
 }
 

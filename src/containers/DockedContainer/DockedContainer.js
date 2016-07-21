@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 class DockedContainer extends Component {
   constructor(props) {
     super(props)
-	
+
   };
-  
+
   render() {
-    const { browser, appNavDrawer} = this.props
-	
-	let docked=browser.greaterThan.medium && appNavDrawer.responsive;
+    const { browser, navigation} = this.props
+
+	let docked=browser.greaterThan.medium && navigation.responsive;
 
 	const childrenWithProps = React.Children.map(this.props.children,
      (child) => React.cloneElement(child, {
        docked: docked
      })
     );
-	
+
     return (
 
 		<div >
@@ -30,15 +30,15 @@ class DockedContainer extends Component {
 
 DockedContainer.propTypes = {
 	browser: PropTypes.object.isRequired,
-	appNavDrawer: PropTypes.object.isRequired,
+	navigation: PropTypes.object.isRequired,
 	children: PropTypes.object,
 }
 
 const mapStateToProps = (state) => {
-  const {browser, appNavDrawer } = state;
+  const {browser, navigation } = state;
   return {
 	browser: browser,
-	appNavDrawer: appNavDrawer,
+	navigation: navigation,
   };
 };
 

@@ -10,27 +10,27 @@ const styles={
 };
 
 class ContentContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  render() {
-    const {docked } = this.props;
+	render() {
+		const {docked } = this.props;
 
-    let contentStyle=docked?styles.content_docked:styles.content_undocked;
+		let contentStyle=docked?styles.content_docked:styles.content_undocked;
 
-    return (	
-		<div style={contentStyle} >
-			{this.props.children}
-		</div>
-    );
+		return (
+			<div style={contentStyle} >
+				{this.props.children}
+			</div>
+		);
 
-  }
+	}
 }
 
 ContentContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  docked: PropTypes.bool,
+	children: PropTypes.node.isRequired,
+	docked: PropTypes.bool,
 };
 
 export default (ContentContainer);

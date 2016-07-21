@@ -1,23 +1,21 @@
 import React, {  Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import {updateTitle} from 'redux-title'
 
-class PropsAndDispatchExample extends Component{
+export default class PropsAndDispatchExample extends Component{
 	constructor(props) {
 		super(props)
 	};
-  
+
 	render(){
-		
-	const {title, updateTitle} = this.props;
-		
+
+		const {title, updateTitle} = this.props;
+
 		function handleClick(){
-			
+
 			updateTitle(Math.random().toString(36).substr(2));
 		}
-		 
-		
-		return (  
+
+
+		return (
 			<div>
 				<h3>Props Example</h3>
 				<p>This example demonstartes how to use a react component with props and dispatches.</p>
@@ -26,33 +24,12 @@ class PropsAndDispatchExample extends Component{
 				<h4>{title}</h4>
 				<button onClick={handleClick}>Change</button>
 				<p>By pressing the button we change the title to a random generated string.</p>
-			</div> 
+			</div>
 		);
 	}
 };
 
 PropsAndDispatchExample.propTypes = {
-  title: PropTypes.string.isRequired,
-  updateTitle: PropTypes.func.isRequired,
+	title: PropTypes.string.isRequired,
+	updateTitle: PropTypes.func.isRequired,
 }
-
-function mapStateToProps(state) {
-
-	const { title} = state;
-
-	return {
-			title:title,
-		};
-
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateTitle: (title) => {
-      dispatch(updateTitle(title));
-    },
-
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PropsAndDispatchExample);

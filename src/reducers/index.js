@@ -4,7 +4,7 @@ import todos from './todos';
 import visibilityFilter from './visibilityFilter';
 import counter from './counter';
 import intl from './intl';
-import appNavDrawer from './appNavDrawer';
+import navigation from './navigation';
 import appStyle from './appStyle';
 import dashboard from './dashboard';
 import auth from './auth';
@@ -24,10 +24,10 @@ const reducers = combineReducers({
   counter,
   browser: responsiveStateReducer,
   intl,
-  appNavDrawer,
+  navigation,
   appStyle,
-  todoDialog, 
-  dashboard, 
+  todoDialog,
+  dashboard,
   usersByPage,
   selectedUsersPage,
   usersQuery,
@@ -38,7 +38,7 @@ const reducers = combineReducers({
   user,
   signIn,
   routing: routerReducer,
-  
+
 })
 
 export default reducers;

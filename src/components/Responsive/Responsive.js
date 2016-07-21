@@ -25,12 +25,9 @@ class Responsive extends Component {
       <Activity
         title='Responsive'
         nav_index='/responsive'>
-
         <p>
-
           {message}
         </p>
-
       </Activity>
     )
   }

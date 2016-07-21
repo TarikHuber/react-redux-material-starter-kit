@@ -2,15 +2,14 @@ import React, { Component } from 'react'
 import AppBar from 'material-ui/AppBar';
 
 const styles={
-	 appBar: {
-        position: 'fixed',
+	appBar: {
+		position: 'fixed',
 		zIndex:2,
-		
-        bottom: 0,
+		bottom: 0,
 		height:64,
 		margin: '0px',
-        },
-		
+	},
+
 }
 
 class FooterAppBar extends Component {
@@ -20,7 +19,7 @@ class FooterAppBar extends Component {
 			<AppBar
 				style={styles.appBar}
 				iconElementLeft={<div/>}
-			/>
+				/>
 		)
 	}
 }

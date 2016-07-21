@@ -4,16 +4,16 @@ import Divider from 'material-ui/Divider';
 import config from '../../config';
 
 const styles={
-	  content:{
-		  marginLeft:'6px',
-	  } 
+	content:{
+		marginLeft:'6px',
+	}
 };
-	
+
 class AppNavDrawerFooter extends Component {
 
 	render() {
 
-		return (	
+		return (
 			<List >
 				<Divider/>
 				<Subheader>Copyright</Subheader>

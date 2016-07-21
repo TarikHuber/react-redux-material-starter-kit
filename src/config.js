@@ -5,6 +5,7 @@ export default {
     route_index:'dashboard',
     name: 'My App',
     company: 'My Company',
+    responsive: true,
   },
   api: {
     root: 'https://api.github.com',
@@ -16,6 +17,5 @@ export default {
   style: {
     init_theme: 'custom1',
   }
-
-
+  
 };

@@ -49,7 +49,7 @@ class Todo extends Component {
 }
 
 Todo.propTypes = {
-    intl: PropTypes.object.isRequired,
+    messages: PropTypes.object.isRequired,
     setTodoDialogOpen: PropTypes.func.isRequired
 }
 

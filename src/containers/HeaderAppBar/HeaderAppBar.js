@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { toggleDrawerOpen } from '../../actions/appNavDrawer';
+import { toggleDrawerOpen } from '../../actions/navigation';
 import HeaderAppBar from '../../components/HeaderAppBar/HeaderAppBar';
 
 const mapDispatchToProps = (dispatch) => {
