@@ -26,9 +26,10 @@ class Search extends Component{
     }
 
     return (
-      <div>
+      <div style={{ display:'inline-block'}} >
         <TextField
           ref='search'
+          style={{width:150}}
           hintStyle={{color:alternateTextColor}}
           inputStyle={{color:alternateTextColor}}
           hintText={hintText}

@@ -5,6 +5,7 @@ import visibilityFilter from './visibilityFilter';
 import counter from './counter';
 import intl from './intl';
 import navigation from './navigation';
+import filterNav from './filterNav';
 import appStyle from './appStyle';
 import dashboard from './dashboard';
 import auth from './auth';
@@ -25,6 +26,7 @@ const reducers = combineReducers({
   browser: responsiveStateReducer,
   intl,
   navigation,
+  filterNav,
   appStyle,
   todoDialog,
   dashboard,

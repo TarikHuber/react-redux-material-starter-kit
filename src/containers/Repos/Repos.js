@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { invalidateReposPage,	selectReposPage, fetchTopReposIfNeeded,	fetchReposForQuery,	setReposQuery, clearRepos} from '../../actions/repos';
 import Repos from '../../components/Repos/Repos';
+import { setFilterNavOpen } from '../../actions/filterNav';
 
 function mapStateToProps(state) {
 	const { intl, selectedReposPage, reposByPage, reposQuery} = state;
@@ -51,6 +52,9 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		setReposQuery: (query) => {
 			dispatch(setReposQuery(query));
+		},
+		setFilterNavOpen: (open)=>{
+				dispatch(setFilterNavOpen(open));
 		},
 	}
 }
