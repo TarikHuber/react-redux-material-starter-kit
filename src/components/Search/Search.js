@@ -13,7 +13,7 @@ class Search extends Component{
 
   render(){
 
-    const { messages,  items , appStyle, handleSearchRequest} = this.props
+    const { hintText , appStyle, handleSearchRequest} = this.props
     const alternateTextColor=appStyle.theme.source.palette.alternateTextColor;
 
     function handleKeyDown(event, value){
@@ -31,7 +31,7 @@ class Search extends Component{
           ref='search'
           hintStyle={{color:alternateTextColor}}
           inputStyle={{color:alternateTextColor}}
-          hintText={messages.search||'search'}
+          hintText={hintText}
           onKeyDown ={ (event)=>{handleKeyDown(event, this.refs.search.input.value)}}
           />
         <IconButton
@@ -44,7 +44,7 @@ class Search extends Component{
 };
 
 Search.propTypes = {
-  messages: PropTypes.object.isRequired,
+  hintText: PropTypes.string,
   appStyle: PropTypes.object.isRequired,
   handleSearchRequest: PropTypes.func.isRequired,
 }

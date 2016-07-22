@@ -18,7 +18,7 @@ export function selectReposPage(page) {
   };
 }
 
-export function reposQuery(query) {
+export function setReposQuery(query) {
   return {
     type: REPOS_QUERY,
     query,
@@ -87,7 +87,7 @@ function shouldFetchRepos(state, page) {
     // Not cached, should fetch
     return true;
   }
-  
+
   if (repos.isFetching) {
     // Shouldn't fetch since fetching is running
     return false;

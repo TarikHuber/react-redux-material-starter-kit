@@ -33,7 +33,7 @@ class MiddleContainer extends Component {
 
 MiddleContainer.propTypes = {
   children: PropTypes.object,
-  top:PropTypes.string,
+  top:PropTypes.number,
 };
 
 export default (MiddleContainer);

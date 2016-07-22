@@ -4,6 +4,7 @@ export default {
 	//General
 	'add': 'Add',
 	'save': 'Save',
+	'search': 'Search',
 	'cancel': 'Cancel',
 	'submit': 'Submit',
 	'required': 'Field is required',

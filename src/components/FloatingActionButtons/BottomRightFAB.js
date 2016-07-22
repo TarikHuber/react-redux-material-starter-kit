@@ -1,12 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 
-const style={
-	position: 'fixed',
-	zIndex:3,
-	right:30,
-	bottom: 35,
-}
+
 
 class BottomLeftFAB extends Component {
 	constructor(props) {
@@ -16,6 +11,13 @@ class BottomLeftFAB extends Component {
 
 	render() {
 		const {  onTouchTap, icon, secondary } = this.props
+
+		const style={
+			position: 'fixed',
+			zIndex:3,
+			right:this.props.right||30,
+			bottom: 35,
+		}
 
 		return (
 
@@ -32,7 +34,7 @@ class BottomLeftFAB extends Component {
 }
 
 BottomLeftFAB.propTypes = {
-
+	right: PropTypes.number,
 	onTouchTap: PropTypes.func,
 	icon: PropTypes.object,
 	secondary: PropTypes.bool

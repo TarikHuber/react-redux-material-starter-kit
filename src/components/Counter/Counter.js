@@ -51,7 +51,7 @@ class Counter extends Component {
 				menu={<AppBarMenu items={menuItems} />
 		}>
 		<div>
-			<MiddleContainer top={'100px'}>
+			<MiddleContainer top={100}>
 				<h1 style={styles.txt_number}>{value}</h1>
 			</MiddleContainer>
 

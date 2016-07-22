@@ -4,6 +4,7 @@ const de2={
 	//General
 	'all': 'Alle',
 	'save': 'Speichern',
+	'search': 'Suchen',
 	'cancel': 'Abbrechen',
 	'submit': 'Bestätigen',
 	'required': 'Feld ist erfolderlich',

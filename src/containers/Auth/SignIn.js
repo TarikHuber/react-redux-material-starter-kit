@@ -118,7 +118,7 @@ class SignIn extends Component {
 		return (
 
 			<Activity nav_index="/signin" title={intl.messages.signin}>
-				<MiddleContainer top="50px">
+				<MiddleContainer top={50}>
 					<form onSubmit={e => {
 							e.preventDefault();
 							handleSubmit(this.refs);
