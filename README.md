@@ -1,3 +1,7 @@
+# Deprecated!!!
+
+Please go to the new verson writen from scratch [React Most Wanted](https://github.com/TarikHuber/react-most-wanted).
+
 # react-redux-material-starter-kit
 
 This starter kit is designet to give a high start up base for react projects. It uses Redux as the state container. It provides the most common features that you need for the run on a new application, like: navigation and routing, internationalisation, theme design and configuration, responsive design etc... The style is focused on [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html). 
