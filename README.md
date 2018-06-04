@@ -1,6 +1,6 @@
 # Deprecated!!!
 
-Please go to the new verson writen from scratch [React Most Wanted](https://github.com/TarikHuber/react-most-wanted).
+Please go to the new version writen from scratch [React Most Wanted](https://github.com/TarikHuber/react-most-wanted).
 
 # react-redux-material-starter-kit
 
